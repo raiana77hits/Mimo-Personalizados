@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mimo Criativo Personalizados</title>
+  <meta name="description" content="Personalizados únicos para presentes, lembrancinhas e momentos especiais." />
+  <style>
+    :root {
+      --rosa-claro: #fbe7ee;
+      --rosa: #e88eae;
+      --rosa-escuro: #c9658c;
+      --creme: #fffaf5;
+      --branco: #ffffff;
+      --texto: #4e4046;
+      --texto-suave: #7a6b71;
+      --borda: #f1d5df;
+      --sombra: 0 18px 45px rgba(173, 101, 130, 0.12);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--texto);
+      background: var(--creme);
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1140px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    /* TOPO */
+    header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 10;
+      padding: 24px 0;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .logo {
+      width: 86px;
+      height: 86px;
+      border-radius: 50%;
+      background: var(--branco);
+      border: 1px solid rgba(255,255,255,.8);
+      display: grid;
+      place-items: center;
+      box-shadow: 0 8px 25px rgba(173, 101, 130, .10);
+      overflow: hidden;
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .logo-placeholder {
+      font-size: 13px;
+      text-align: center;
+      color: var(--rosa-escuro);
+      font-weight: 700;
+      padding: 10px;
+      line-height: 1.15;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      font-size: 14px;
+      color: #715d66;
+    }
+
+    nav a:hover {
+      color: var(--rosa-escuro);
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 760px;
+      background:
+        radial-gradient(circle at 85% 18%, rgba(255,255,255,.85), transparent 26%),
+        radial-gradient(circle at 7% 70%, rgba(255,255,255,.65), transparent 25%),
+        var(--rosa-claro);
+      display: flex;
+      align-items: center;
+      padding: 150px 0 90px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255,255,255,.45);
+      filter: blur(2px);
+    }
+
+    .hero::before {
+      width: 260px;
+      height: 260px;
+      right: -90px;
+      top: 140px;
+    }
+
+    .hero::after {
+      width: 180px;
+      height: 180px;
+      left: -70px;
+      bottom: 50px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      align-items: center;
+      gap: 65px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--rosa-escuro);
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .eyebrow::before {
+      content: "♡";
+      font-size: 18px;
+    }
+
+    h1 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(47px, 6vw, 76px);
+      line-height: 1.02;
+      font-weight: 500;
+      color: #513e47;
+      max-width: 690px;
+      letter-spacing: -.035em;
+    }
+
+    .hero p {
+      max-width: 590px;
+      margin: 25px 0 32px;
+      color: var(--texto-suave);
+      font-size: 18px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 17px 27px;
+      border-radius: 999px;
+      background: var(--rosa);
+      color: var(--branco);
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: .03em;
+      box-shadow: 0 12px 25px rgba(201, 101, 140, .22);
+      transition: .25s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      background: var(--rosa-escuro);
+    }
+
+    .hero-visual {
+      min-height: 500px;
+      display: grid;
+      place-items: center;
+      position: relative;
+    }
+
+    .visual-card {
+      width: min(460px, 100%);
+      aspect-ratio: 1 / 1.03;
+      border-radius: 42% 58% 51% 49% / 45% 43% 57% 55%;
+      background: rgba(255,255,255,.68);
+      box-shadow: var(--sombra);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.8);
+      display: grid;
+      place-items: center;
+      padding: 34px;
+      text-align: center;
+    }
+
+    .visual-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .visual-placeholder {
+      color: #9b7b88;
+      font-size: 15px;
+      max-width: 260px;
+    }
+
+    .visual-placeholder strong {
+      display: block;
+      font-family: Georgia, serif;
+      font-size: 28px;
+      color: #765664;
+      margin-bottom: 8px;
+    }
+
+    .sparkle {
+      position: absolute;
+      color: #d687a6;
+      font-size: 30px;
+      opacity: .65;
+    }
+
+    .s1 { top: 28px; left: 42px; }
+    .s2 { right: 20px; bottom: 95px; font-size: 22px; }
+    .s3 { left: 5px; bottom: 30px; font-size: 18px; }
+
+    /* PRODUTOS */
+    .products {
+      padding: 105px 0;
+      background: var(--creme);
+    }
+
+    .section-head {
+      text-align: center;
+      max-width: 780px;
+      margin: 0 auto 52px;
+    }
+
+    .section-kicker {
+      color: var(--rosa-escuro);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-weight: 500;
+      color: #503e46;
+      font-size: clamp(38px, 4.8vw, 58px);
+      line-height: 1.08;
+      letter-spacing: -.025em;
+    }
+
+    .section-head p {
+      color: var(--texto-suave);
+      margin-top: 18px;
+      font-size: 17px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .product-card {
+      background: var(--branco);
+      border: 1px solid var(--borda);
+      border-radius: 28px;
+      padding: 28px;
+      min-height: 210px;
+      box-shadow: 0 10px 35px rgba(151, 94, 116, .07);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      position: relative;
+      overflow: hidden;
+      transition: .25s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 45px rgba(151, 94, 116, .12);
+    }
+
+    .product-card::before {
+      content: "♡";
+      position: absolute;
+      right: 23px;
+      top: 18px;
+      font-size: 27px;
+      color: #e9b1c7;
+    }
+
+    .product-card::after {
+      content: "";
+      position: absolute;
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      top: -55px;
+      left: -35px;
+      background: var(--rosa-claro);
+      opacity: .75;
+    }
+
+    .product-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      background: #fff2f6;
+      display: grid;
+      place-items: center;
+      margin-bottom: 22px;
+      font-size: 22px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .product-card h3 {
+      font-family: Georgia, serif;
+      font-size: 25px;
+      font-weight: 500;
+      margin-bottom: 5px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .product-card p {
+      color: var(--texto-suave);
+      font-size: 14px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* QUEM SOMOS */
+    .about {
+      padding: 105px 0;
+      background: #fff1f5;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .about-image {
+      min-height: 510px;
+      border-radius: 36px;
+      background: rgba(255,255,255,.7);
+      border: 1px solid rgba(255,255,255,.95);
+      box-shadow: var(--sombra);
+      display: grid;
+      place-items: center;
+      padding: 35px;
+      text-align: center;
+      color: #987480;
+    }
+
+    .about-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 26px;
+    }
+
+    .about-copy .section-kicker,
+    .about-copy h2 {
+      text-align: left;
+    }
+
+    .about-copy > p {
+      margin-top: 22px;
+      color: var(--texto-suave);
+      font-size: 17px;
+      max-width: 620px;
+    }
+
+    .numbers {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 32px;
+    }
+
+    .number-card {
+      background: rgba(255,255,255,.68);
+      border: 1px solid rgba(255,255,255,.9);
+      border-radius: 22px;
+      padding: 22px 18px;
+    }
+
+    .number-card strong {
+      display: block;
+      font-family: Georgia, serif;
+      font-size: 31px;
+      color: var(--rosa-escuro);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .number-card span {
+      font-size: 13px;
+      color: var(--texto-suave);
+    }
+
+    .partial-note {
+      text-align: center;
+      padding: 28px 20px 38px;
+      color: #9a838c;
+      font-size: 13px;
+      background: #fff1f5;
+    }
+
+    @media (max-width: 900px) {
+      header {
+        position: relative;
+        background: var(--rosa-claro);
+      }
+
+      nav ul {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 60px;
+        min-height: auto;
+      }
+
+      .hero-grid,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-grid {
+        gap: 30px;
+      }
+
+      .hero-visual {
+        min-height: 420px;
+      }
+
+      .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .about-image {
+        min-height: 390px;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .container {
+        width: min(100% - 28px, 1140px);
+      }
+
+      .logo {
+        width: 72px;
+        height: 72px;
+      }
+
+      h1 {
+        font-size: 46px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .product-grid,
+      .numbers {
+        grid-template-columns: 1fr;
+      }
+
+      .products,
+      .about {
+        padding: 76px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!--
+    MIMO CRIATIVO PERSONALIZADOS
+    VERSÃO PARCIAL: somente as seções já definidas até agora.
+
+    IMPORTANTE:
+    Onde houver "placeholder", troque depois pelo caminho das imagens reais.
+    Exemplo:
+    <img src="imagens/logo-mimo.png" alt="Mimo Criativo Personalizados">
+  -->
+
+  <header>
+    <div class="container nav">
+      <a href="#inicio" class="logo" aria-label="Mimo Criativo Personalizados">
+        <!-- TROQUE ESTE BLOCO PELO IMG DA LOGO QUANDO TIVER O ARQUIVO -->
+        <img src="Logo Mimo Criativo Personalizados.png" alt="Mimo Criativo Personalizados">
+      </a>
+
+      <nav>
+        <ul>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#personalizados">Personalizados</a></li>
+          <li><a href="#quem-somos">Quem somos</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- SEÇÃO 1 — HERO APROVADO -->
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Feito especialmente para você</div>
+          <h1>Momentos especiais merecem detalhes inesquecíveis.</h1>
+          <p>
+            Transformamos suas ideias em personalizados únicos para fazer parte
+            dos momentos mais importantes da sua história.
+          </p>
+
+          <!-- COLOQUE O LINK REAL DO WHATSAPP NO HREF -->
+          <a class="btn" href="#contato">QUERO CRIAR ALGO ESPECIAL</a>
+        </div>
+
+        <div class="hero-visual">
+          <span class="sparkle s1">✧</span>
+          <span class="sparkle s2">♡</span>
+          <span class="sparkle s3">✦</span>
+
+          <div class="visual-card">
+            <!--
+              AQUI ENTRA A COMPOSIÇÃO VISUAL APROVADA:
+              chinelo preto com pedrarias + caneca + copo/tumbler.
+
+              Depois, substitua o placeholder por:
+              <img src="imagens/produtos-hero.png" alt="Produtos personalizados Mimo Criativo">
+            -->
+            <div class="visual-placeholder">
+              <strong>Seus produtos aqui</strong>
+              Composição com chinelo personalizado, caneca e copo/tumbler.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO 2 — CATEGORIAS / PRODUTOS -->
+    <section class="products" id="personalizados">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Personalizados para cada ocasião</div>
+          <h2>Sua ideia, do seu jeito.</h2>
+          <p>
+            De um presente único a centenas de lembrancinhas para o seu evento.
+          </p>
+        </div>
+
+        <div class="product-grid">
+          <article class="product-card">
+            <div class="product-icon">☕</div>
+            <h3>Canecas</h3>
+            <p>Personalizadas para presentear, divulgar ou eternizar um momento.</p>
+          </article>
+
+          <article class="product-card">
+            <div class="product-icon">♡</div>
+            <h3>Chinelos</h3>
+            <p>Modelos personalizados para festas, eventos e ocasiões especiais.</p>
+          </article>
+
+          <article class="product-card">
+            <div class="product-icon">✦</div>
+            <h3>Squeezes</h3>
+            <p>Peças práticas e personalizadas para diferentes públicos e ocasiões.</p>
+          </article>
+
+          <article class="product-card">
+            <div class="product-icon">✿</div>
+            <h3>Camisetas</h3>
+            <p>Estampas personalizadas para grupos, marcas, festas e eventos.</p>
+          </article>
+
+          <article class="product-card">
+            <div class="product-icon">♕</div>
+            <h3>Copos para Adegas</h3>
+            <p>Personalização pensada para valorizar sua marca e a experiência do cliente.</p>
+          </article>
+
+          <article class="product-card">
+            <div class="product-icon">▣</div>
+            <h3>Fotografia em Azulejo</h3>
+            <p>Uma forma delicada e diferente de transformar lembranças em presente.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO 3 — QUEM SOMOS -->
+    <section class="about" id="quem-somos">
+      <div class="container about-grid">
+        <div class="about-image">
+          <!--
+            AQUI PODE ENTRAR UMA FOTO DA MIMO, DA PRODUÇÃO OU DOS PRODUTOS.
+            Exemplo:
+            <img src="imagens/mimo-producao.jpg" alt="Produção Mimo Criativo">
+          -->
+          Espaço reservado para uma foto da Mimo Criativo, da produção ou de uma composição de produtos.
+        </div>
+
+        <div class="about-copy">
+          <div class="section-kicker">Quem somos</div>
+          <h2>Há 7 anos transformando ideias em lembranças especiais.</h2>
+          <p>
+            Desde 2019, a Mimo Criativo Personalizados transforma ideias em peças feitas
+            para marcar momentos. Já são mais de 10 mil pedidos realizados, atendendo
+            clientes no varejo e também no atacado, sempre com carinho, personalidade
+            e atenção aos detalhes.
+          </p>
+
+          <div class="numbers">
+            <div class="number-card">
+              <strong>2019</strong>
+              <span>O início da nossa história</span>
+            </div>
+
+            <div class="number-card">
+              <strong>+10 mil</strong>
+              <span>Pedidos realizados</span>
+            </div>
+
+            <div class="number-card">
+              <strong>Varejo + Atacado</strong>
+              <span>Atendimento para diferentes necessidades</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contato provisório apenas para o botão interno funcionar -->
+    <div id="contato" class="partial-note">
+      Próximas seções ainda serão construídas e aprovadas antes de entrarem nesta landing page.
+    </div>
+  </main>
+
+</body>
+</html>
