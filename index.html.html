@@ -454,6 +454,22 @@
       background: #fff1f5;
     }
 
+
+    /* CARROSSEL DE CHINELOS */
+    .product-card--flipflops{justify-content:flex-end;min-height:330px;padding:0;cursor:pointer}
+    .flipflop-carousel{position:absolute;inset:0 0 auto 0;height:205px;overflow:hidden;background:#fff7fa;border-radius:28px 28px 0 0;z-index:1}
+    .flipflop-carousel img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:0;transform:scale(1.015);transition:opacity .35s ease,transform .45s ease}
+    .flipflop-carousel img.is-active{opacity:1;transform:scale(1)}
+    .flipflop-carousel-dots{position:absolute;left:50%;bottom:10px;transform:translateX(-50%);display:flex;gap:5px;z-index:3;pointer-events:none}
+    .flipflop-carousel-dots span{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.72);border:1px solid rgba(201,101,140,.28);transition:.2s ease}
+    .flipflop-carousel-dots span.is-active{width:16px;border-radius:999px;background:var(--rosa-escuro)}
+    .product-card--flipflops .product-icon{position:relative;z-index:4;margin:0 28px 18px}
+    .product-card--flipflops h3,.product-card--flipflops p{position:relative;z-index:4;margin-left:28px;margin-right:28px}
+    .product-card--flipflops h3{margin-bottom:5px}
+    .product-card--flipflops p{margin-bottom:28px}
+    .product-card--flipflops:hover .flipflop-carousel img.is-active{transform:scale(1.035)}
+    @media (max-width:620px){.product-card--flipflops{min-height:320px}.flipflop-carousel{height:195px}}
+
     @media (max-width: 900px) {
       header {
         position: relative;
@@ -607,7 +623,19 @@
             <p>Personalizadas para presentear, divulgar ou eternizar um momento.</p>
           </article>
 
-          <article class="product-card">
+          <article class="product-card product-card--flipflops" id="card-chinelos">
+            <div class="flipflop-carousel" aria-label="Galeria de chinelos personalizados">
+              <img src="chinelo-branco-flor-verde.png" alt="Chinelo branco personalizado com flores verdes" class="is-active">
+              <img src="chinelo-havaianas-personalizado-brasil.png" alt="Chinelo personalizado com tema Brasil">
+              <img src="chinelo-marrom-borboleta-dourada.png" alt="Chinelo marrom personalizado com borboleta dourada">
+              <img src="chinelo-rosa-flor-rosa.png" alt="Chinelo rosa personalizado com flores">
+              <img src="chinelo-rosa-laco-dourado.png" alt="Chinelo rosa personalizado com laço dourado">
+              <img src="chinelo-vaquinha.png" alt="Chinelo personalizado com estampa de vaquinha">
+              <div class="flipflop-carousel-dots" aria-hidden="true">
+                <span class="is-active"></span><span></span><span></span>
+                <span></span><span></span><span></span>
+              </div>
+            </div>
             <div class="product-icon">♡</div>
             <h3>Chinelos</h3>
             <p>Modelos personalizados para festas, eventos e ocasiões especiais.</p>
@@ -687,6 +715,41 @@
       Próximas seções ainda serão construídas e aprovadas antes de entrarem nesta landing page.
     </div>
   </main>
+
+  <script>
+    (() => {
+      const card = document.querySelector('#card-chinelos');
+      if (!card) return;
+      const slides = [...card.querySelectorAll('.flipflop-carousel img')];
+      const dots = [...card.querySelectorAll('.flipflop-carousel-dots span')];
+      let current = 0, timer = null;
+
+      function showSlide(index) {
+        current = (index + slides.length) % slides.length;
+        slides.forEach((img, i) => img.classList.toggle('is-active', i === current));
+        dots.forEach((dot, i) => dot.classList.toggle('is-active', i === current));
+      }
+
+      function nextSlide() { showSlide(current + 1); }
+      function startCarousel() {
+        if (timer) return;
+        timer = setInterval(nextSlide, 1200);
+      }
+      function stopCarousel() {
+        clearInterval(timer);
+        timer = null;
+      }
+
+      card.addEventListener('mouseenter', () => {
+        nextSlide();
+        startCarousel();
+      });
+      card.addEventListener('mouseleave', stopCarousel);
+      card.setAttribute('tabindex', '0');
+      card.addEventListener('focusin', startCarousel);
+      card.addEventListener('focusout', stopCarousel);
+    })();
+  </script>
 
 </body>
 </html>
