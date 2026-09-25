@@ -3,19 +3,41 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mimo Criativo Personalizados</title>
-  <meta name="description" content="Personalizados únicos para presentes, lembrancinhas e momentos especiais." />
+  <title>Mimo Criativo Personalizados | Canecas, Chinelos, Copos e Presentes Personalizados</title>
+  <meta name="description" content="Canecas, chinelos, copos, taças, camisetas e presentes personalizados para aniversários, casamentos, festas e empresas. Varejo e atacado. Peça pelo WhatsApp." />
+  <meta name="theme-color" content="#e94f86" />
+
+  <!-- FAVICON (logo da Mimo) -->
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="favicon-512.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+
+  <!-- COMPARTILHAMENTO (WhatsApp, Facebook, Instagram) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content="Mimo Criativo Personalizados" />
+  <meta property="og:title" content="Mimo Criativo Personalizados | Momentos especiais merecem detalhes inesquecíveis" />
+  <meta property="og:description" content="Canecas, chinelos, copos, taças e presentes personalizados para aniversários, casamentos, festas e empresas." />
+  <!-- Quando o site tiver o endereço definitivo, troque por um link completo, ex.: https://seudominio.com.br/kit-presente-caneca-abraco.webp -->
+  <meta property="og:image" content="kit-presente-caneca-abraco.webp" />
+  <meta name="twitter:card" content="summary_large_image" />
+
   <style>
     :root {
       --rosa-claro: #fbe7ee;
-      --rosa: #e88eae;
-      --rosa-escuro: #c9658c;
+      --rosa-bebe: #fff1f5;
+      --rosa: #f27aa3;
+      --rosa-forte: #ec5f8c;
+      --rosa-vivo: #e94f86;
+      --rosa-escuro: #c9426f;
       --creme: #fffaf5;
       --branco: #ffffff;
       --texto: #4e4046;
       --texto-suave: #7a6b71;
-      --borda: #f1d5df;
-      --sombra: 0 18px 45px rgba(173, 101, 130, 0.12);
+      --borda: #f5cfdc;
+      --sombra: 0 18px 45px rgba(201, 66, 111, 0.14);
+      --degrade: linear-gradient(135deg, #f27aa3 0%, #e94f86 55%, #c9426f 100%);
     }
 
     * {
@@ -72,10 +94,10 @@
       height: 86px;
       border-radius: 50%;
       background: var(--branco);
-      border: 1px solid rgba(255,255,255,.8);
+      border: 2px solid rgba(255,255,255,.9);
       display: grid;
       place-items: center;
-      box-shadow: 0 8px 25px rgba(173, 101, 130, .10);
+      box-shadow: 0 8px 25px rgba(201, 66, 111, .18);
       overflow: hidden;
     }
 
@@ -85,35 +107,44 @@
       object-fit: cover;
     }
 
-    .logo-placeholder {
-      font-size: 13px;
-      text-align: center;
-      color: var(--rosa-escuro);
-      font-weight: 700;
-      padding: 10px;
-      line-height: 1.15;
-    }
-
     nav ul {
       list-style: none;
       display: flex;
       align-items: center;
       gap: 28px;
       font-size: 14px;
-      color: #715d66;
+      font-weight: 700;
+      color: #6d4a59;
+    }
+
+    nav a {
+      transition: color .2s ease;
     }
 
     nav a:hover {
-      color: var(--rosa-escuro);
+      color: var(--rosa-vivo);
+    }
+
+    nav .nav-cta {
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: var(--degrade);
+      color: var(--branco);
+      box-shadow: 0 8px 20px rgba(233, 79, 134, .25);
+    }
+
+    nav .nav-cta:hover {
+      color: var(--branco);
+      filter: brightness(1.05);
     }
 
     /* HERO */
     .hero {
       min-height: 760px;
       background:
-        radial-gradient(circle at 85% 18%, rgba(255,255,255,.85), transparent 26%),
-        radial-gradient(circle at 7% 70%, rgba(255,255,255,.65), transparent 25%),
-        var(--rosa-claro);
+        radial-gradient(circle at 88% 14%, rgba(236, 95, 140, .30), transparent 30%),
+        radial-gradient(circle at 5% 75%, rgba(255,255,255,.75), transparent 28%),
+        linear-gradient(160deg, #fde4ee 0%, #fbd3e2 55%, #f8c0d6 100%);
       display: flex;
       align-items: center;
       padding: 150px 0 90px;
@@ -157,7 +188,7 @@
       display: inline-flex;
       align-items: center;
       gap: 9px;
-      color: var(--rosa-escuro);
+      color: var(--rosa-vivo);
       font-weight: 700;
       font-size: 13px;
       letter-spacing: .11em;
@@ -175,15 +206,20 @@
       font-size: clamp(47px, 6vw, 76px);
       line-height: 1.02;
       font-weight: 500;
-      color: #513e47;
+      color: #4d3540;
       max-width: 690px;
       letter-spacing: -.035em;
+    }
+
+    h1 em {
+      font-style: italic;
+      color: var(--rosa-vivo);
     }
 
     .hero p {
       max-width: 590px;
       margin: 25px 0 32px;
-      color: var(--texto-suave);
+      color: #6f5963;
       font-size: 18px;
     }
 
@@ -194,18 +230,37 @@
       gap: 10px;
       padding: 17px 27px;
       border-radius: 999px;
-      background: var(--rosa);
+      background: var(--degrade);
       color: var(--branco);
       font-size: 14px;
       font-weight: 800;
       letter-spacing: .03em;
-      box-shadow: 0 12px 25px rgba(201, 101, 140, .22);
-      transition: .25s ease;
+      box-shadow: 0 12px 25px rgba(233, 79, 134, .30);
+      transition: transform .25s ease, box-shadow .25s ease;
     }
 
     .btn:hover {
       transform: translateY(-2px);
-      background: var(--rosa-escuro);
+      box-shadow: 0 16px 32px rgba(233, 79, 134, .38);
+    }
+
+    .btn svg {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+    }
+
+    .btn-light {
+      background: var(--branco);
+      color: var(--rosa-escuro);
+      box-shadow: 0 12px 25px rgba(90, 20, 50, .18);
+    }
+
+    .btn-outline-light {
+      background: transparent;
+      color: var(--branco);
+      border: 2px solid rgba(255,255,255,.75);
+      box-shadow: none;
     }
 
     .hero-visual {
@@ -216,55 +271,53 @@
     }
 
     .visual-card {
-      width: min(460px, 100%);
-      aspect-ratio: 1 / 1.03;
-      border-radius: 42% 58% 51% 49% / 45% 43% 57% 55%;
-      background: rgba(255,255,255,.68);
-      box-shadow: var(--sombra);
+      width: min(420px, 100%);
+      aspect-ratio: 4 / 5;
+      border-radius: 220px 220px 36px 36px;
+      background: var(--branco);
+      box-shadow: 0 30px 60px rgba(201, 66, 111, .25);
       position: relative;
       overflow: hidden;
-      border: 1px solid rgba(255,255,255,.8);
-      display: grid;
-      place-items: center;
-      padding: 34px;
-      text-align: center;
+      border: 6px solid var(--branco);
+      outline: 2px solid rgba(233, 79, 134, .45);
+      outline-offset: 8px;
+      animation: heroZoom 1.4s ease-out both;
     }
 
     .visual-card img {
       width: 100%;
       height: 100%;
-      object-fit: contain;
+      object-fit: cover;
+      border-radius: 214px 214px 30px 30px;
     }
 
-    .visual-placeholder {
-      color: #9b7b88;
-      font-size: 15px;
-      max-width: 260px;
-    }
-
-    .visual-placeholder strong {
-      display: block;
-      font-family: Georgia, serif;
-      font-size: 28px;
-      color: #765664;
-      margin-bottom: 8px;
+    @keyframes heroZoom {
+      from { opacity: 0; transform: scale(.94); }
+      to { opacity: 1; transform: scale(1); }
     }
 
     .sparkle {
       position: absolute;
-      color: #d687a6;
+      color: var(--rosa-vivo);
       font-size: 30px;
-      opacity: .65;
+      opacity: .75;
+      z-index: 2;
+      animation: float 5s ease-in-out infinite;
     }
 
-    .s1 { top: 28px; left: 42px; }
-    .s2 { right: 20px; bottom: 95px; font-size: 22px; }
-    .s3 { left: 5px; bottom: 30px; font-size: 18px; }
+    .s1 { top: 18px; left: 30px; }
+    .s2 { right: 8px; bottom: 95px; font-size: 26px; animation-delay: -1.6s; }
+    .s3 { left: 0; bottom: 40px; font-size: 20px; animation-delay: -3.2s; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0); }
+      50% { transform: translateY(-12px) rotate(8deg); }
+    }
 
     /* PRODUTOS */
     .products {
       padding: 105px 0;
-      background: var(--creme);
+      background: linear-gradient(180deg, var(--creme) 0%, #fff5f8 100%);
     }
 
     .section-head {
@@ -274,7 +327,7 @@
     }
 
     .section-kicker {
-      color: var(--rosa-escuro);
+      color: var(--rosa-vivo);
       font-size: 13px;
       font-weight: 800;
       letter-spacing: .12em;
@@ -285,7 +338,7 @@
     h2 {
       font-family: Georgia, 'Times New Roman', serif;
       font-weight: 500;
-      color: #503e46;
+      color: #4d3540;
       font-size: clamp(38px, 4.8vw, 58px);
       line-height: 1.08;
       letter-spacing: -.025em;
@@ -309,18 +362,18 @@
       border-radius: 28px;
       padding: 28px;
       min-height: 210px;
-      box-shadow: 0 10px 35px rgba(151, 94, 116, .07);
+      box-shadow: 0 10px 35px rgba(201, 66, 111, .08);
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
       position: relative;
       overflow: hidden;
-      transition: .25s ease;
+      transition: transform .25s ease, box-shadow .25s ease;
     }
 
     .product-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 18px 45px rgba(151, 94, 116, .12);
+      box-shadow: 0 18px 45px rgba(201, 66, 111, .16);
     }
 
     .product-card::before {
@@ -329,7 +382,7 @@
       right: 23px;
       top: 18px;
       font-size: 27px;
-      color: #e9b1c7;
+      color: var(--rosa);
     }
 
     .product-card::after {
@@ -340,15 +393,16 @@
       border-radius: 50%;
       top: -55px;
       left: -35px;
-      background: var(--rosa-claro);
-      opacity: .75;
+      background: linear-gradient(135deg, #fbd3e2, #fbe7ee);
+      opacity: .85;
     }
 
     .product-icon {
       width: 48px;
       height: 48px;
       border-radius: 16px;
-      background: #fff2f6;
+      background: linear-gradient(135deg, #fde4ee, #fbd3e2);
+      color: var(--rosa-vivo);
       display: grid;
       place-items: center;
       margin-bottom: 22px;
@@ -373,10 +427,132 @@
       z-index: 1;
     }
 
+    /* CARDS COM FOTO — área quadrada padronizada */
+    .product-card--photo {
+      padding: 0;
+      justify-content: flex-start;
+    }
+
+    .product-card--photo::before,
+    .product-card--photo::after {
+      display: none;
+    }
+
+    .product-card--photo .card-body {
+      padding: 22px 26px 26px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .product-card--photo .card-body p {
+      flex: 1;
+    }
+
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 14px;
+      color: var(--rosa-vivo);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .03em;
+    }
+
+    .card-link:hover {
+      color: var(--rosa-escuro);
+    }
+
+    .carousel {
+      position: relative;
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      background: var(--rosa-claro);
+      touch-action: pan-y;
+      cursor: zoom-in;
+    }
+
+    .carousel img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      opacity: 0;
+      transition: opacity .6s ease, transform .8s ease;
+    }
+
+    .carousel img.is-active {
+      opacity: 1;
+    }
+
+    .product-card--photo:hover .carousel img.is-active {
+      transform: scale(1.03);
+    }
+
+    .carousel-dots {
+      position: absolute;
+      left: 50%;
+      bottom: 12px;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 4px;
+      z-index: 3;
+      padding: 5px 8px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.55);
+      backdrop-filter: blur(4px);
+    }
+
+    .carousel-dots button {
+      width: 8px;
+      height: 8px;
+      padding: 0;
+      border: 0;
+      border-radius: 50%;
+      background: rgba(201, 66, 111, .35);
+      cursor: pointer;
+      transition: width .25s ease, background .25s ease;
+    }
+
+    .carousel-dots button.is-active {
+      width: 20px;
+      border-radius: 999px;
+      background: var(--rosa-vivo);
+    }
+
+    .carousel-count {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      z-index: 3;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.85);
+      color: var(--rosa-escuro);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .05em;
+    }
+
+    .products-cta {
+      margin-top: 44px;
+      text-align: center;
+      color: var(--texto-suave);
+    }
+
+    .products-cta p {
+      margin-bottom: 16px;
+    }
+
     /* QUEM SOMOS */
     .about {
       padding: 105px 0;
-      background: #fff1f5;
+      background:
+        radial-gradient(circle at 92% 10%, rgba(236, 95, 140, .18), transparent 30%),
+        linear-gradient(180deg, #fff1f5 0%, #fde4ee 100%);
     }
 
     .about-grid {
@@ -390,7 +566,7 @@
       min-height: 510px;
       border-radius: 36px;
       background: rgba(255,255,255,.7);
-      border: 1px solid rgba(255,255,255,.95);
+      border: 2px dashed var(--rosa);
       box-shadow: var(--sombra);
       display: grid;
       place-items: center;
@@ -426,8 +602,9 @@
     }
 
     .number-card {
-      background: rgba(255,255,255,.68);
-      border: 1px solid rgba(255,255,255,.9);
+      background: rgba(255,255,255,.8);
+      border: 1px solid rgba(255,255,255,.95);
+      border-top: 4px solid var(--rosa-forte);
       border-radius: 22px;
       padding: 22px 18px;
     }
@@ -436,7 +613,7 @@
       display: block;
       font-family: Georgia, serif;
       font-size: 31px;
-      color: var(--rosa-escuro);
+      color: var(--rosa-vivo);
       line-height: 1;
       margin-bottom: 8px;
     }
@@ -446,117 +623,219 @@
       color: var(--texto-suave);
     }
 
-    .partial-note {
+    /* CONTATO */
+    .contact {
+      padding: 95px 0;
+      background:
+        radial-gradient(circle at 12% 20%, rgba(255,255,255,.22), transparent 30%),
+        radial-gradient(circle at 90% 90%, rgba(255,255,255,.14), transparent 28%),
+        var(--degrade);
+      color: var(--branco);
       text-align: center;
-      padding: 28px 20px 38px;
-      color: #9a838c;
-      font-size: 13px;
-      background: #fff1f5;
+      position: relative;
+      overflow: hidden;
     }
 
-
-    /* CARROSSEL DE CHINELOS — imagens completas, sem corte */
-    .product-card--flipflops{
-      justify-content:flex-end;
-      min-height:390px;
-      padding:0;
-      cursor:pointer;
+    .contact .section-kicker {
+      color: #ffe3ed;
     }
 
-    .flipflop-carousel{
-      position:absolute;
-      inset:0 0 auto 0;
-      height:255px;
-      overflow:hidden;
-      background:#fff7fa;
-      border-radius:28px 28px 0 0;
-      z-index:1;
+    .contact h2 {
+      color: var(--branco);
+      max-width: 760px;
+      margin: 0 auto;
     }
 
-    .flipflop-carousel img{
-      position:absolute;
-      inset:0;
-      width:100%;
-      height:100%;
-      object-fit:contain;
-      object-position:center;
-      padding:8px 12px 18px;
-      box-sizing:border-box;
-      opacity:0;
-      transform:scale(1);
-      transition:opacity .35s ease,transform .45s ease;
+    .contact p {
+      max-width: 620px;
+      margin: 18px auto 34px;
+      color: #ffeef4;
+      font-size: 17px;
     }
 
-    .flipflop-carousel img.is-active{
-      opacity:1;
-      transform:scale(1);
+    .contact-actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
     }
 
-    .flipflop-carousel-dots{
-      position:absolute;
-      left:50%;
-      bottom:10px;
-      transform:translateX(-50%);
-      display:flex;
-      gap:5px;
-      z-index:3;
-      pointer-events:none;
+    /* RODAPÉ */
+    footer {
+      background: #3d2a33;
+      color: #e9d6de;
+      padding: 44px 0 26px;
+      font-size: 14px;
     }
 
-    .flipflop-carousel-dots span{
-      width:6px;
-      height:6px;
-      border-radius:50%;
-      background:rgba(255,255,255,.88);
-      border:1px solid rgba(201,101,140,.28);
-      transition:.2s ease;
+    .footer-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      flex-wrap: wrap;
     }
 
-    .flipflop-carousel-dots span.is-active{
-      width:16px;
-      border-radius:999px;
-      background:var(--rosa-escuro);
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
     }
 
-    .product-card--flipflops .product-icon{
-      position:relative;
-      z-index:4;
-      margin:0 28px 18px;
+    .footer-brand img {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: var(--branco);
     }
 
-    .product-card--flipflops h3,
-    .product-card--flipflops p{
-      position:relative;
-      z-index:4;
-      margin-left:28px;
-      margin-right:28px;
+    .footer-brand strong {
+      display: block;
+      font-family: Georgia, serif;
+      font-weight: 500;
+      font-size: 18px;
+      color: var(--branco);
     }
 
-    .product-card--flipflops h3{margin-bottom:5px}
-    .product-card--flipflops p{margin-bottom:28px}
-
-    .product-card--flipflops:hover .flipflop-carousel img.is-active{
-      transform:scale(1.02);
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
     }
 
-    @media (max-width:620px){
-      .product-card--flipflops{
-        min-height:365px;
-      }
-
-      .flipflop-carousel{
-        height:235px;
-      }
-
-      .flipflop-carousel img{
-        padding:6px 10px 18px;
-      }
+    .footer-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
     }
+
+    .footer-links a:hover {
+      color: var(--rosa);
+    }
+
+    .footer-links svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .footer-bottom {
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,.12);
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      color: #b89aa7;
+      font-size: 12px;
+    }
+
+    .footer-bottom a {
+      color: #f6b3cb;
+      font-weight: 700;
+    }
+
+    .footer-bottom a:hover {
+      color: var(--branco);
+    }
+
+    /* WHATSAPP FLUTUANTE */
+    .whatsapp-float {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      width: 64px;
+      height: 64px;
+      z-index: 90;
+      display: block;
+      border-radius: 50%;
+      filter: drop-shadow(0 10px 20px rgba(0,0,0,.25));
+      transition: transform .25s ease;
+    }
+
+    .whatsapp-float::before,
+    .whatsapp-float::after {
+      content: "";
+      position: absolute;
+      inset: 4px;
+      border-radius: 50%;
+      background: rgba(37, 211, 102, .45);
+      z-index: -1;
+      animation: whatsPulse 2s ease-out infinite;
+    }
+
+    .whatsapp-float::after {
+      animation-delay: 1s;
+    }
+
+    .whatsapp-float img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      animation: whatsBeat 2s ease-in-out infinite;
+    }
+
+    .whatsapp-float:hover {
+      transform: translateY(-4px) scale(1.05);
+    }
+
+    @keyframes whatsPulse {
+      0% { transform: scale(1); opacity: .8; }
+      100% { transform: scale(1.8); opacity: 0; }
+    }
+
+    @keyframes whatsBeat {
+      0%, 100% { transform: scale(1); }
+      10% { transform: scale(1.08); }
+      20% { transform: scale(1); }
+    }
+
+    /* FOTO AMPLIADA */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: rgba(40, 20, 30, .88);
+      backdrop-filter: blur(4px);
+    }
+
+    .lightbox.is-open {
+      display: flex;
+    }
+
+    .lightbox img {
+      max-width: min(92vw, 900px);
+      max-height: 86vh;
+      object-fit: contain;
+      border-radius: 18px;
+      box-shadow: 0 30px 80px rgba(0,0,0,.45);
+    }
+
+    .lightbox button {
+      position: absolute;
+      border: 0;
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      background: rgba(255,255,255,.92);
+      color: var(--rosa-escuro);
+      font-size: 24px;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    .lightbox-close { top: 18px; right: 18px; }
+    .lightbox-prev { left: 18px; top: 50%; transform: translateY(-50%); }
+    .lightbox-next { right: 18px; top: 50%; transform: translateY(-50%); }
 
     @media (max-width: 900px) {
       header {
         position: relative;
-        background: var(--rosa-claro);
+        background: #fde4ee;
       }
 
       nav ul {
@@ -574,11 +853,11 @@
       }
 
       .hero-grid {
-        gap: 30px;
+        gap: 40px;
       }
 
       .hero-visual {
-        min-height: 420px;
+        min-height: 0;
       }
 
       .product-grid {
@@ -608,14 +887,51 @@
         font-size: 16px;
       }
 
+      .hero .btn,
+      .contact-actions .btn {
+        width: 100%;
+      }
+
+      .visual-card {
+        width: min(340px, 88%);
+      }
+
       .product-grid,
       .numbers {
         grid-template-columns: 1fr;
       }
 
       .products,
-      .about {
+      .about,
+      .contact {
         padding: 76px 0;
+      }
+
+      .footer-row,
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .whatsapp-float {
+        width: 56px;
+        height: 56px;
+        right: 16px;
+        bottom: 16px;
+      }
+
+      .lightbox-prev,
+      .lightbox-next {
+        top: auto;
+        bottom: 24px;
+        transform: none;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
       }
     }
   </style>
@@ -624,19 +940,14 @@
 
   <!--
     MIMO CRIATIVO PERSONALIZADOS
-    VERSÃO PARCIAL: somente as seções já definidas até agora.
-
-    IMPORTANTE:
-    Onde houver "placeholder", troque depois pelo caminho das imagens reais.
-    Exemplo:
-    <img src="imagens/logo-mimo.png" alt="Mimo Criativo Personalizados">
+    Número do WhatsApp usado em todos os botões: 5511986096371
+    Para trocar, procure por "5511986096371" e substitua em todos os lugares.
   -->
 
   <header>
     <div class="container nav">
-      <a href="#inicio" class="logo" aria-label="Mimo Criativo Personalizados">
-        <!-- TROQUE ESTE BLOCO PELO IMG DA LOGO QUANDO TIVER O ARQUIVO -->
-        <img src="Logo Mimo Criativo Personalizados.png" alt="Mimo Criativo Personalizados">
+      <a href="#inicio" class="logo" aria-label="Mimo Criativo Personalizados, voltar ao início">
+        <img src="logo-mimo.webp" alt="Mimo Criativo Personalizados" width="86" height="86">
       </a>
 
       <nav>
@@ -644,51 +955,42 @@
           <li><a href="#inicio">Início</a></li>
           <li><a href="#personalizados">Personalizados</a></li>
           <li><a href="#quem-somos">Quem somos</a></li>
-          <li><a href="#contato">Contato</a></li>
+          <li><a class="nav-cta" href="https://wa.me/5511986096371?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Mimo%20Criativo%20e%20gostaria%20de%20fazer%20um%20or%C3%A7amento." target="_blank" rel="noopener">Contato</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <main>
-    <!-- SEÇÃO 1 — HERO APROVADO -->
+    <!-- SEÇÃO 1 — HERO -->
     <section class="hero" id="inicio">
       <div class="container hero-grid">
         <div>
           <div class="eyebrow">Feito especialmente para você</div>
-          <h1>Momentos especiais merecem detalhes inesquecíveis.</h1>
+          <h1>Momentos especiais merecem detalhes <em>inesquecíveis.</em></h1>
           <p>
             Transformamos suas ideias em personalizados únicos para fazer parte
             dos momentos mais importantes da sua história.
           </p>
 
-          <!-- COLOQUE O LINK REAL DO WHATSAPP NO HREF -->
-          <a class="btn" href="#contato">QUERO CRIAR ALGO ESPECIAL</a>
+          <a class="btn" href="https://wa.me/5511986096371?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20criar%20algo%20especial." target="_blank" rel="noopener">
+            QUERO CRIAR ALGO ESPECIAL
+          </a>
         </div>
 
         <div class="hero-visual">
-          <span class="sparkle s1">✧</span>
-          <span class="sparkle s2">♡</span>
-          <span class="sparkle s3">✦</span>
+          <span class="sparkle s1" aria-hidden="true">✧</span>
+          <span class="sparkle s2" aria-hidden="true">♡</span>
+          <span class="sparkle s3" aria-hidden="true">✦</span>
 
           <div class="visual-card">
-            <!--
-              AQUI ENTRA A COMPOSIÇÃO VISUAL APROVADA:
-              chinelo preto com pedrarias + caneca + copo/tumbler.
-
-              Depois, substitua o placeholder por:
-              <img src="imagens/produtos-hero.png" alt="Produtos personalizados Mimo Criativo">
-            -->
-            <div class="visual-placeholder">
-              <strong>Seus produtos aqui</strong>
-              Composição com chinelo personalizado, caneca e copo/tumbler.
-            </div>
+            <img src="kit-presente-caneca-abraco.webp" alt="Kit presente com caneca personalizada 'Meu lugar favorito é dentro do seu abraço' e chocolates" width="1122" height="1402" fetchpriority="high">
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SEÇÃO 2 — CATEGORIAS / PRODUTOS -->
+    <!-- SEÇÃO 2 — PRODUTOS -->
     <section class="products" id="personalizados">
       <div class="container">
         <div class="section-head">
@@ -700,28 +1002,56 @@
         </div>
 
         <div class="product-grid">
-          <article class="product-card">
-            <div class="product-icon">☕</div>
-            <h3>Canecas</h3>
-            <p>Personalizadas para presentear, divulgar ou eternizar um momento.</p>
+          <!-- CANECAS -->
+          <article class="product-card product-card--photo">
+            <div class="carousel" aria-label="Fotos de canecas personalizadas">
+              <img src="caneca-melhor-avo.webp" alt="Caneca personalizada com a frase 'Eu tenho a melhor avó do mundo'" loading="lazy">
+              <img src="caneca-religiosa-personalizada.webp" alt="Canecas personalizadas para igreja e eventos religiosos" loading="lazy">
+              <img src="kit-presente-caneca-abraco.webp" alt="Kit presente com caneca personalizada e chocolates" loading="lazy">
+            </div>
+            <div class="card-body">
+              <div class="product-icon">☕</div>
+              <h3>Canecas</h3>
+              <p>Para presentear, divulgar sua marca ou marcar eventos, de uma unidade a grandes quantidades.</p>
+              <a class="card-link" href="https://wa.me/5511986096371?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20um%20or%C3%A7amento%20de%20canecas%20personalizadas." target="_blank" rel="noopener">Pedir orçamento →</a>
+            </div>
           </article>
 
-          <article class="product-card product-card--flipflops" id="card-chinelos">
-            <div class="flipflop-carousel" aria-label="Galeria de chinelos personalizados">
-              <img src="chinelo-branco-flor-verde.png" alt="Chinelo branco personalizado com flores verdes" class="is-active">
-              <img src="chinelo-havaianas-personalizado-brasil.png" alt="Chinelo personalizado com tema Brasil">
-              <img src="chinelo-marrom-borboleta-dourada.png" alt="Chinelo marrom personalizado com borboleta dourada">
-              <img src="chinelo-rosa-flor-rosa.png" alt="Chinelo rosa personalizado com flores">
-              <img src="chinelo-rosa-laco-dourado.png" alt="Chinelo rosa personalizado com laço dourado">
-              <img src="chinelo-vaquinha.png" alt="Chinelo personalizado com estampa de vaquinha">
-              <div class="flipflop-carousel-dots" aria-hidden="true">
-                <span class="is-active"></span><span></span><span></span>
-                <span></span><span></span><span></span>
-              </div>
+          <!-- CHINELOS -->
+          <article class="product-card product-card--photo">
+            <div class="carousel" aria-label="Fotos de chinelos personalizados">
+              <img src="chinelo-branco-flor-verde.webp" alt="Chinelo branco personalizado com flores verdes" loading="lazy">
+              <img src="chinelo-havaianas-personalizado-brasil.webp" alt="Chinelo personalizado com tema Brasil" loading="lazy">
+              <img src="chinelo-marrom-borboleta-dourada.webp" alt="Chinelo personalizado com pérolas e borboleta dourada" loading="lazy">
+              <img src="chinelo-rosa-flor-rosa.webp" alt="Chinelo rosa personalizado com flores" loading="lazy">
+              <img src="chinelo-rosa-laco-dourado.webp" alt="Chinelo rosa personalizado com laço dourado" loading="lazy">
+              <img src="chinelo-vaquinha.webp" alt="Chinelo personalizado com estampa de vaquinha" loading="lazy">
             </div>
-            <div class="product-icon">♡</div>
-            <h3>Chinelos</h3>
-            <p>Modelos personalizados para festas, eventos e ocasiões especiais.</p>
+            <div class="card-body">
+              <div class="product-icon">♡</div>
+              <h3>Chinelos</h3>
+              <p>Modelos personalizados para festas, casamentos, eventos e ocasiões especiais.</p>
+              <a class="card-link" href="https://wa.me/5511986096371?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20um%20or%C3%A7amento%20de%20chinelos%20personalizados." target="_blank" rel="noopener">Pedir orçamento →</a>
+            </div>
+          </article>
+
+          <!-- COPOS E TAÇAS -->
+          <article class="product-card product-card--photo">
+            <div class="carousel" aria-label="Fotos de copos e taças personalizados">
+              <img src="copo-long-drink-niver-yara.webp" alt="Copos long drink coloridos personalizados para aniversário" loading="lazy">
+              <img src="copo-long-drink-bodas-de-cristal.webp" alt="Copos personalizados para bodas de casamento" loading="lazy">
+              <img src="taca-10-anos-de-casados.webp" alt="Taças personalizadas para aniversário de casamento" loading="lazy">
+              <img src="copo-infantil-unicornio.webp" alt="Copos infantis personalizados com tema unicórnio" loading="lazy">
+              <img src="copo-canudo-augusto-3-anos.webp" alt="Copos com tampa e canudo personalizados para festa infantil" loading="lazy">
+              <img src="copo-termico-personalizado-times.webp" alt="Copos térmicos personalizados com gravação" loading="lazy">
+              <img src="caneca-chopp-gel-times.webp" alt="Canecas de chopp com gel personalizadas" loading="lazy">
+            </div>
+            <div class="card-body">
+              <div class="product-icon">♕</div>
+              <h3>Copos e Taças</h3>
+              <p>Para aniversários, casamentos, eventos, adegas e presentes, com o nome e o tema que você quiser.</p>
+              <a class="card-link" href="https://wa.me/5511986096371?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20um%20or%C3%A7amento%20de%20copos%20ou%20ta%C3%A7as%20personalizados." target="_blank" rel="noopener">Pedir orçamento →</a>
+            </div>
           </article>
 
           <article class="product-card">
@@ -737,16 +1067,15 @@
           </article>
 
           <article class="product-card">
-            <div class="product-icon">♕</div>
-            <h3>Copos para Adegas</h3>
-            <p>Personalização pensada para valorizar sua marca e a experiência do cliente.</p>
-          </article>
-
-          <article class="product-card">
             <div class="product-icon">▣</div>
             <h3>Fotografia em Azulejo</h3>
             <p>Uma forma delicada e diferente de transformar lembranças em presente.</p>
           </article>
+        </div>
+
+        <div class="products-cta">
+          <p>Não encontrou o que procura? Conta pra gente a sua ideia.</p>
+          <a class="btn" href="https://wa.me/5511986096371?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20tenho%20uma%20ideia%20de%20personalizado." target="_blank" rel="noopener">FALAR NO WHATSAPP</a>
         </div>
       </div>
     </section>
@@ -758,7 +1087,7 @@
           <!--
             AQUI PODE ENTRAR UMA FOTO DA MIMO, DA PRODUÇÃO OU DOS PRODUTOS.
             Exemplo:
-            <img src="imagens/mimo-producao.jpg" alt="Produção Mimo Criativo">
+            <img src="mimo-producao.webp" alt="Produção Mimo Criativo">
           -->
           Espaço reservado para uma foto da Mimo Criativo, da produção ou de uma composição de produtos.
         </div>
@@ -793,44 +1122,229 @@
       </div>
     </section>
 
-    <!-- Contato provisório apenas para o botão interno funcionar -->
-    <div id="contato" class="partial-note">
-      Próximas seções ainda serão construídas e aprovadas antes de entrarem nesta landing page.
-    </div>
+    <!-- SEÇÃO 4 — CONTATO -->
+    <section class="contact" id="contato">
+      <div class="container">
+        <div class="section-kicker">Vamos criar juntos?</div>
+        <h2>Conte sua ideia e a gente transforma em um mimo especial.</h2>
+        <p>Chame no WhatsApp para fazer seu orçamento ou siga a Mimo no Instagram para ver as novidades.</p>
+
+        <div class="contact-actions">
+          <a class="btn btn-light" href="https://wa.me/5511986096371?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Mimo%20Criativo%20e%20gostaria%20de%20fazer%20um%20or%C3%A7amento." target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1 2.7.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.6-.3z"/></svg>
+            FALAR NO WHATSAPP
+          </a>
+          <a class="btn btn-outline-light" href="https://www.instagram.com/mimo_criativo_personalizados/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+            @MIMO_CRIATIVO_PERSONALIZADOS
+          </a>
+        </div>
+      </div>
+    </section>
   </main>
 
+  <footer>
+    <div class="container">
+      <div class="footer-row">
+        <div class="footer-brand">
+          <img src="logo-mimo.webp" alt="" width="64" height="64" loading="lazy">
+          <div>
+            <strong>Mimo Criativo Personalizados</strong>
+            Desde 2019 · Varejo e atacado
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <a href="https://wa.me/5511986096371" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
+            WhatsApp: (11) 98609-6371
+          </a>
+          <a href="https://www.instagram.com/mimo_criativo_personalizados/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg>
+            Instagram: @mimo_criativo_personalizados
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> Mimo Criativo Personalizados. Todos os direitos reservados.</span>
+        <span>Site criado por <a href="https://landing-pages-moara.vercel.app/" target="_blank" rel="noopener">Moara</a> · landing-pages-moara.vercel.app</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BOTÃO FLUTUANTE DO WHATSAPP -->
+  <a class="whatsapp-float" href="https://wa.me/5511986096371?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Mimo%20Criativo%20e%20gostaria%20de%20fazer%20um%20or%C3%A7amento." target="_blank" rel="noopener" aria-label="Falar pelo WhatsApp">
+    <img src="botao-whatsapp.webp" alt="WhatsApp" width="64" height="64">
+  </a>
+
+  <!-- FOTO AMPLIADA -->
+  <div class="lightbox" role="dialog" aria-modal="true" aria-label="Foto ampliada">
+    <button class="lightbox-close" type="button" aria-label="Fechar">×</button>
+    <button class="lightbox-prev" type="button" aria-label="Foto anterior">‹</button>
+    <img src="" alt="">
+    <button class="lightbox-next" type="button" aria-label="Próxima foto">›</button>
+  </div>
+
   <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // CARROSSEL DOS PRODUTOS — troca sozinho, pausa no mouse/toque, arrasta com o dedo
     (() => {
-      const card = document.querySelector('#card-chinelos');
-      if (!card) return;
-      const slides = [...card.querySelectorAll('.flipflop-carousel img')];
-      const dots = [...card.querySelectorAll('.flipflop-carousel-dots span')];
-      let current = 0, timer = null;
+      const INTERVALO = 3000;
+      const reduzirMovimento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const lightbox = document.querySelector('.lightbox');
+      const lightboxImg = lightbox.querySelector('img');
+      let lightboxCarousel = null;
 
-      function showSlide(index) {
-        current = (index + slides.length) % slides.length;
-        slides.forEach((img, i) => img.classList.toggle('is-active', i === current));
-        dots.forEach((dot, i) => dot.classList.toggle('is-active', i === current));
-      }
+      const carousels = [...document.querySelectorAll('.carousel')].map((el, n) => {
+        const slides = [...el.querySelectorAll('img')];
+        const state = { el, slides, current: 0, timer: null, visible: false, paused: false };
 
-      function nextSlide() { showSlide(current + 1); }
-      function startCarousel() {
-        if (timer) return;
-        timer = setInterval(nextSlide, 1200);
-      }
-      function stopCarousel() {
-        clearInterval(timer);
-        timer = null;
-      }
+        slides[0].classList.add('is-active');
+        slides[0].loading = 'eager';
 
-      card.addEventListener('mouseenter', () => {
-        nextSlide();
-        startCarousel();
+        if (slides.length > 1) {
+          const count = document.createElement('span');
+          count.className = 'carousel-count';
+          el.appendChild(count);
+          state.count = count;
+
+          const dots = document.createElement('div');
+          dots.className = 'carousel-dots';
+          state.dots = slides.map((_, i) => {
+            const b = document.createElement('button');
+            b.type = 'button';
+            b.setAttribute('aria-label', `Ver foto ${i + 1}`);
+            b.addEventListener('click', e => { e.stopPropagation(); show(state, i); restart(state); });
+            dots.appendChild(b);
+            return b;
+          });
+          el.appendChild(dots);
+        }
+
+        state.offset = n * 900; // cards fora de sincronia
+        update(state);
+        return state;
       });
-      card.addEventListener('mouseleave', stopCarousel);
-      card.setAttribute('tabindex', '0');
-      card.addEventListener('focusin', startCarousel);
-      card.addEventListener('focusout', stopCarousel);
+
+      function update(s) {
+        s.slides.forEach((img, i) => img.classList.toggle('is-active', i === s.current));
+        if (s.dots) s.dots.forEach((d, i) => d.classList.toggle('is-active', i === s.current));
+        if (s.count) s.count.textContent = `${s.current + 1}/${s.slides.length}`;
+        // carrega a próxima foto antes de ela aparecer
+        const next = s.slides[(s.current + 1) % s.slides.length];
+        if (next) next.loading = 'eager';
+      }
+
+      function show(s, i) {
+        s.current = (i + s.slides.length) % s.slides.length;
+        update(s);
+      }
+
+      function stop(s) {
+        clearTimeout(s.timer);
+        clearInterval(s.timer);
+        s.timer = null;
+      }
+
+      function start(s, delay = 0) {
+        if (reduzirMovimento || s.slides.length < 2 || s.timer || !s.visible || s.paused) return;
+        s.timer = setTimeout(() => {
+          s.timer = setInterval(() => show(s, s.current + 1), INTERVALO);
+          show(s, s.current + 1);
+        }, INTERVALO + delay);
+      }
+
+      function restart(s) {
+        stop(s);
+        start(s);
+      }
+
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          const s = carousels.find(c => c.el === entry.target);
+          s.visible = entry.isIntersecting;
+          s.visible ? start(s, s.offset) : stop(s);
+        });
+      }, { threshold: .4 });
+
+      carousels.forEach(s => {
+        observer.observe(s.el);
+        const card = s.el.closest('.product-card');
+
+        card.addEventListener('pointerenter', e => { if (e.pointerType !== 'mouse') return; s.paused = true; stop(s); });
+        card.addEventListener('pointerleave', e => { if (e.pointerType !== 'mouse') return; s.paused = false; start(s); });
+
+        // arrastar com o dedo
+        let x0 = null;
+        s.el.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; stop(s); }, { passive: true });
+        s.el.addEventListener('touchend', e => {
+          if (x0 === null) return;
+          const dx = e.changedTouches[0].clientX - x0;
+          if (Math.abs(dx) > 40) {
+            show(s, s.current + (dx < 0 ? 1 : -1));
+            s.swiped = true;
+          }
+          x0 = null;
+          start(s);
+        });
+
+        // abrir foto ampliada
+        s.el.addEventListener('click', () => {
+          if (s.swiped) { s.swiped = false; return; }
+          lightboxCarousel = s;
+          openLightbox();
+        });
+      });
+
+      function openLightbox() {
+        const s = lightboxCarousel;
+        const img = s.slides[s.current];
+        lightboxImg.src = img.currentSrc || img.src;
+        lightboxImg.alt = img.alt;
+        const multi = s.slides.length > 1;
+        lightbox.querySelector('.lightbox-prev').hidden = !multi;
+        lightbox.querySelector('.lightbox-next').hidden = !multi;
+        lightbox.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+        stop(s);
+      }
+
+      function closeLightbox() {
+        lightbox.classList.remove('is-open');
+        document.body.style.overflow = '';
+        if (lightboxCarousel) {
+          lightboxCarousel.paused = false;
+          start(lightboxCarousel);
+        }
+      }
+
+      function stepLightbox(d) {
+        show(lightboxCarousel, lightboxCarousel.current + d);
+        openLightbox();
+      }
+
+      lightbox.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+      lightbox.querySelector('.lightbox-prev').addEventListener('click', () => stepLightbox(-1));
+      lightbox.querySelector('.lightbox-next').addEventListener('click', () => stepLightbox(1));
+      lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+      document.addEventListener('keydown', e => {
+        if (!lightbox.classList.contains('is-open')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') stepLightbox(-1);
+        if (e.key === 'ArrowRight') stepLightbox(1);
+      });
+
+      // lightbox: arrastar com o dedo
+      let lx = null;
+      lightbox.addEventListener('touchstart', e => { lx = e.touches[0].clientX; }, { passive: true });
+      lightbox.addEventListener('touchend', e => {
+        if (lx === null || !lightboxCarousel || lightboxCarousel.slides.length < 2) return;
+        const dx = e.changedTouches[0].clientX - lx;
+        if (Math.abs(dx) > 40) stepLightbox(dx < 0 ? 1 : -1);
+        lx = null;
+      });
     })();
   </script>
 
