@@ -88,6 +88,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 30px;
+      position: relative;
     }
 
     .logo {
@@ -100,6 +101,7 @@
       place-items: center;
       box-shadow: 0 8px 25px rgba(201, 66, 111, .18);
       overflow: hidden;
+      flex-shrink: 0;
     }
 
     .logo img {
@@ -126,7 +128,8 @@
       color: var(--rosa-vivo);
     }
 
-    nav .nav-cta {
+    nav .nav-cta,
+    .nav-cta-mobile {
       padding: 10px 18px;
       border-radius: 999px;
       background: var(--degrade);
@@ -137,6 +140,49 @@
     nav .nav-cta:hover {
       color: var(--branco);
       filter: brightness(1.05);
+    }
+
+    /* botões do topo que só aparecem no celular */
+    .nav-mobile {
+      display: none;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-cta-mobile {
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: .02em;
+    }
+
+    .menu-toggle {
+      width: 44px;
+      height: 44px;
+      border: 0;
+      border-radius: 50%;
+      background: var(--branco);
+      color: var(--rosa-escuro);
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      box-shadow: 0 6px 16px rgba(201, 66, 111, .16);
+    }
+
+    .menu-toggle svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .menu-toggle .icon-close {
+      display: none;
+    }
+
+    header.menu-open .menu-toggle .icon-open {
+      display: none;
+    }
+
+    header.menu-open .menu-toggle .icon-close {
+      display: block;
     }
 
     /* HERO */
@@ -721,7 +767,9 @@
     }
 
     .business .btn:focus-visible,
-    nav a:focus-visible {
+    nav a:focus-visible,
+    .nav-mobile a:focus-visible,
+    .menu-toggle:focus-visible {
       outline: 3px solid #f6b3cb;
       outline-offset: 3px;
     }
@@ -1012,17 +1060,74 @@
     .lightbox-next { right: 18px; top: 50%; transform: translateY(-50%); }
 
     @media (max-width: 900px) {
-      header {
-        position: relative;
-        background: #fde4ee;
+      /* TOPO NO CELULAR/TABLET — fixo, compacto, com Contato e menu */
+      html {
+        scroll-padding-top: 84px;
       }
 
+      header {
+        position: fixed;
+        z-index: 50;
+        padding: 10px 0;
+        background: rgba(253, 228, 238, .92);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        box-shadow: 0 6px 20px rgba(201, 66, 111, .10);
+      }
+
+      .nav {
+        gap: 12px;
+      }
+
+      .logo {
+        width: 56px;
+        height: 56px;
+        box-shadow: 0 6px 16px rgba(201, 66, 111, .16);
+      }
+
+      .nav-mobile {
+        display: flex;
+      }
+
+      /* menu vira um painel que abre embaixo do topo */
       nav ul {
+        display: none;
+        position: absolute;
+        top: calc(100% + 12px);
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 2px;
+        padding: 10px;
+        border-radius: 22px;
+        background: var(--branco);
+        box-shadow: 0 24px 50px rgba(201, 66, 111, .22);
+        font-size: 16px;
+      }
+
+      header.menu-open nav ul {
+        display: flex;
+      }
+
+      nav ul a {
+        display: block;
+        padding: 14px 16px;
+        border-radius: 14px;
+      }
+
+      nav ul a:hover,
+      nav ul a:active {
+        background: var(--rosa-bebe);
+      }
+
+      /* o Contato já aparece no topo, então some de dentro do painel */
+      nav ul li:last-child {
         display: none;
       }
 
       .hero {
-        padding-top: 60px;
+        padding: 104px 0 60px;
         min-height: auto;
       }
 
@@ -1033,7 +1138,7 @@
       }
 
       .hero-grid {
-        gap: 40px;
+        gap: 34px;
       }
 
       .business-grid {
@@ -1058,17 +1163,22 @@
         width: min(100% - 28px, 1140px);
       }
 
-      .logo {
-        width: 72px;
-        height: 72px;
+      .hero {
+        padding: 96px 0 52px;
+      }
+
+      .eyebrow {
+        font-size: 12px;
+        margin-bottom: 14px;
       }
 
       h1 {
-        font-size: 46px;
+        font-size: clamp(38px, 11vw, 44px);
       }
 
       .hero p {
         font-size: 16px;
+        margin: 18px 0 24px;
       }
 
       .hero .btn,
@@ -1077,8 +1187,12 @@
         width: 100%;
       }
 
+      .hero-grid {
+        gap: 30px;
+      }
+
       .visual-card {
-        width: min(340px, 88%);
+        width: min(320px, 84%);
       }
 
       .product-grid,
@@ -1127,6 +1241,13 @@
       }
     }
 
+    @media (max-width: 360px) {
+      .nav-cta-mobile {
+        padding: 9px 14px;
+        font-size: 13px;
+      }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after {
         animation: none !important;
@@ -1149,7 +1270,7 @@
         <img src="logo-mimo.webp" alt="Mimo Criativo Personalizados" width="86" height="86">
       </a>
 
-      <nav>
+      <nav id="menu">
         <ul>
           <li><a href="#inicio">Início</a></li>
           <li><a href="#personalizados">Personalizados</a></li>
@@ -1158,6 +1279,15 @@
           <li><a class="nav-cta" href="https://wa.me/5511986096371?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Mimo%20Criativo%20e%20gostaria%20de%20fazer%20um%20or%C3%A7amento." target="_blank" rel="noopener">Contato</a></li>
         </ul>
       </nav>
+
+      <!-- SÓ APARECE NO CELULAR: botão Contato + botão do menu -->
+      <div class="nav-mobile">
+        <a class="nav-cta-mobile" href="https://wa.me/5511986096371?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Mimo%20Criativo%20e%20gostaria%20de%20fazer%20um%20or%C3%A7amento." target="_blank" rel="noopener">Contato</a>
+        <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+          <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -1489,6 +1619,28 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // MENU DO CELULAR — abre/fecha o painel e fecha ao escolher um link
+    (() => {
+      const header = document.querySelector('header');
+      const toggle = document.querySelector('.menu-toggle');
+      if (!header || !toggle) return;
+
+      function setMenu(open) {
+        header.classList.toggle('menu-open', open);
+        toggle.setAttribute('aria-expanded', open);
+        toggle.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+      }
+
+      toggle.addEventListener('click', e => {
+        e.stopPropagation();
+        setMenu(!header.classList.contains('menu-open'));
+      });
+
+      document.querySelectorAll('#menu a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+      document.addEventListener('click', e => { if (!header.contains(e.target)) setMenu(false); });
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
+    })();
 
     // CARROSSEL DOS PRODUTOS — troca sozinho, pausa no mouse/toque, arrasta com o dedo
     (() => {
