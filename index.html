@@ -19,8 +19,9 @@
   <meta property="og:site_name" content="Mimo Criativo Personalizados" />
   <meta property="og:title" content="Mimo Criativo Personalizados | Momentos especiais merecem detalhes inesquecíveis" />
   <meta property="og:description" content="Canecas, chinelos, copos, taças e presentes personalizados para aniversários, casamentos, festas e empresas." />
-  <!-- Quando o site tiver o endereço definitivo, troque por um link completo, ex.: https://seudominio.com.br/kit-presente-caneca-abraco.webp -->
-  <meta property="og:image" content="kit-presente-caneca-abraco.webp" />
+  <meta property="og:url" content="https://mimo-personalizados.vercel.app/" />
+  <!-- Se um dia o site mudar de endereço (domínio próprio), troque o link abaixo também -->
+  <meta property="og:image" content="https://mimo-personalizados.vercel.app/kit-presente-caneca-abraco.webp" />
   <meta name="twitter:card" content="summary_large_image" />
 
   <style>
@@ -547,6 +548,179 @@
       margin-bottom: 16px;
     }
 
+    /* PARA EMPRESAS */
+    .business {
+      padding: 105px 0;
+      background:
+        radial-gradient(circle at 92% 6%, rgba(236, 95, 140, .30), transparent 32%),
+        radial-gradient(circle at 4% 96%, rgba(242, 122, 163, .16), transparent 30%),
+        linear-gradient(160deg, #4d3540 0%, #3d2a33 100%);
+      color: #ecd9e1;
+    }
+
+    .business-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .business .section-kicker {
+      color: #f6b3cb;
+    }
+
+    .business h2 {
+      color: var(--branco);
+    }
+
+    .business-intro {
+      margin-top: 20px;
+      font-size: 17px;
+      color: #e2c9d3;
+      max-width: 540px;
+    }
+
+    .business-uses {
+      list-style: none;
+      margin: 30px 0;
+      display: grid;
+      gap: 14px;
+    }
+
+    .business-uses li {
+      display: grid;
+      grid-template-columns: 40px 1fr;
+      gap: 14px;
+      align-items: start;
+    }
+
+    .business-uses .use-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 14px;
+      background: var(--degrade);
+      color: var(--branco);
+      display: grid;
+      place-items: center;
+      font-size: 18px;
+      box-shadow: 0 8px 18px rgba(233, 79, 134, .30);
+    }
+
+    .business-uses strong {
+      display: block;
+      color: var(--branco);
+      font-size: 16px;
+    }
+
+    .business-uses span {
+      font-size: 14px;
+      color: #cfb3bf;
+    }
+
+    .business-perks {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 32px;
+    }
+
+    .business-perks li {
+      padding: 8px 15px;
+      border-radius: 999px;
+      border: 1px solid rgba(246, 179, 203, .35);
+      background: rgba(255, 255, 255, .05);
+      font-size: 13px;
+      font-weight: 700;
+      color: #fbe7ee;
+    }
+
+    .business-perks li::before {
+      content: "✓ ";
+      color: var(--rosa);
+    }
+
+    /* Calendário de datas comemorativas */
+    .date-card {
+      background: var(--creme);
+      color: var(--texto);
+      border-radius: 32px;
+      padding: 34px 32px 28px;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, .28);
+      outline: 2px solid rgba(246, 179, 203, .45);
+      outline-offset: 8px;
+    }
+
+    .date-card h3 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-weight: 500;
+      font-size: 27px;
+      line-height: 1.15;
+      color: #4d3540;
+    }
+
+    .date-card > p {
+      font-size: 14px;
+      color: var(--texto-suave);
+      margin: 6px 0 20px;
+    }
+
+    .date-list {
+      list-style: none;
+    }
+
+    .date-list li {
+      display: grid;
+      grid-template-columns: 62px 1fr auto;
+      align-items: center;
+      gap: 14px;
+      padding: 12px 0;
+      border-top: 1px dashed var(--borda);
+    }
+
+    .date-list time {
+      font-family: Georgia, serif;
+      font-size: 15px;
+      color: var(--rosa-vivo);
+      text-transform: lowercase;
+    }
+
+    .date-list span {
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .date-list .date-highlight {
+      margin: 8px -14px 0;
+      padding: 14px;
+      border: 0;
+      border-radius: 18px;
+      background: var(--degrade);
+      color: var(--branco);
+    }
+
+    .date-list .date-highlight time {
+      color: #ffe3ed;
+    }
+
+    .date-tag {
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--branco);
+      color: var(--rosa-escuro);
+      font-size: 11px;
+      font-weight: 800;
+      font-style: normal;
+      letter-spacing: .04em;
+      white-space: nowrap;
+    }
+
+    .business .btn:focus-visible,
+    nav a:focus-visible {
+      outline: 3px solid #f6b3cb;
+      outline-offset: 3px;
+    }
+
     /* QUEM SOMOS */
     .about {
       padding: 105px 0;
@@ -848,12 +1022,17 @@
       }
 
       .hero-grid,
-      .about-grid {
+      .about-grid,
+      .business-grid {
         grid-template-columns: 1fr;
       }
 
       .hero-grid {
         gap: 40px;
+      }
+
+      .business-grid {
+        gap: 50px;
       }
 
       .hero-visual {
@@ -888,7 +1067,8 @@
       }
 
       .hero .btn,
-      .contact-actions .btn {
+      .contact-actions .btn,
+      .business .btn {
         width: 100%;
       }
 
@@ -902,9 +1082,23 @@
       }
 
       .products,
+      .business,
       .about,
       .contact {
         padding: 76px 0;
+      }
+
+      .date-card {
+        padding: 28px 22px 22px;
+      }
+
+      .date-list li {
+        grid-template-columns: 52px 1fr;
+      }
+
+      .date-tag {
+        grid-column: 2;
+        justify-self: start;
       }
 
       .footer-row,
@@ -954,6 +1148,7 @@
         <ul>
           <li><a href="#inicio">Início</a></li>
           <li><a href="#personalizados">Personalizados</a></li>
+          <li><a href="#empresas">Empresas</a></li>
           <li><a href="#quem-somos">Quem somos</a></li>
           <li><a class="nav-cta" href="https://wa.me/5511986096371?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Mimo%20Criativo%20e%20gostaria%20de%20fazer%20um%20or%C3%A7amento." target="_blank" rel="noopener">Contato</a></li>
         </ul>
@@ -1080,7 +1275,80 @@
       </div>
     </section>
 
-    <!-- SEÇÃO 3 — QUEM SOMOS -->
+    <!-- SEÇÃO 3 — PARA EMPRESAS -->
+    <section class="business" id="empresas">
+      <div class="container business-grid">
+
+        <div>
+          <div class="section-kicker">Para empresas</div>
+          <h2>Presentes que fazem a sua marca ser lembrada.</h2>
+          <p class="business-intro">
+            Brindes personalizados com a identidade da sua empresa para encantar
+            clientes, valorizar sua equipe e marcar presença nas datas que importam.
+          </p>
+
+          <ul class="business-uses">
+            <li>
+              <span class="use-icon" aria-hidden="true">✧</span>
+              <div>
+                <strong>Kits de fim de ano</strong>
+                <span>Agradeça clientes e colaboradores com um presente feito com a sua marca.</span>
+              </div>
+            </li>
+            <li>
+              <span class="use-icon" aria-hidden="true">♡</span>
+              <div>
+                <strong>Boas-vindas à equipe</strong>
+                <span>Kits de integração para o novo colaborador se sentir parte do time desde o primeiro dia.</span>
+              </div>
+            </li>
+            <li>
+              <span class="use-icon" aria-hidden="true">✦</span>
+              <div>
+                <strong>Eventos e feiras</strong>
+                <span>Canecas, copos e squeezes com a sua logo para divulgar a marca de um jeito útil e bonito.</span>
+              </div>
+            </li>
+          </ul>
+
+          <ul class="business-perks">
+            <li>Sua logo e suas cores</li>
+            <li>Arte aprovada antes da produção</li>
+            <li>Pedidos em grande quantidade</li>
+            <!-- Depois de confirmar com a Mimo, apague as marcações de comentário se ela emitir nota fiscal:
+            <li>Emitimos nota fiscal</li>
+            -->
+          </ul>
+
+          <a class="btn" href="https://wa.me/5511986096371?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20um%20or%C3%A7amento%20de%20brindes%20personalizados%20para%20minha%20empresa." target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1 2.7.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.6-.3z"/></svg>
+            ORÇAMENTO PARA MINHA EMPRESA
+          </a>
+        </div>
+
+        <aside class="date-card" aria-label="Datas comemorativas para presentear">
+          <h3>Um mimo para cada data do ano</h3>
+          <p>Planeje os presentes da sua empresa com antecedência.</p>
+
+          <ol class="date-list">
+            <li><time>08 mar</time><span>Dia da Mulher</span></li>
+            <li><time>maio</time><span>Dia das Mães</span></li>
+            <li><time>agosto</time><span>Dia dos Pais</span></li>
+            <li><time>15 set</time><span>Dia do Cliente</span></li>
+            <li><time>15 out</time><span>Dia dos Professores</span></li>
+            <li class="date-highlight">
+              <time>dez</time>
+              <span>Fim de ano</span>
+              <!-- Quando a Mimo definir a data limite, troque por ex.: "Pedidos até 30/11" -->
+              <em class="date-tag">Pedidos abertos</em>
+            </li>
+          </ol>
+        </aside>
+
+      </div>
+    </section>
+
+    <!-- SEÇÃO 4 — QUEM SOMOS -->
     <section class="about" id="quem-somos">
       <div class="container about-grid">
         <div class="about-image">
@@ -1122,7 +1390,7 @@
       </div>
     </section>
 
-    <!-- SEÇÃO 4 — CONTATO -->
+    <!-- SEÇÃO 5 — CONTATO -->
     <section class="contact" id="contato">
       <div class="container">
         <div class="section-kicker">Vamos criar juntos?</div>
