@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Humanize Marketing Digital | Presença que vira faturamento</title>
+<meta name="description" content="Estratégia, conteúdo humanizado, tráfego pago e estrutura digital integrados para fazer sua empresa vender mais. Nós somos a Ray e a Jaque, de São Paulo.">
+<meta property="og:title" content="Humanize Marketing Digital">
+<meta property="og:description" content="Presença digital que vira faturamento. Estratégia, conteúdo, tráfego e estrutura para empresas que querem escalar.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="og-image.jpg">
+<meta name="theme-color" content="#020A3F">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Instrument+Serif:ital@1&family=Manrope:wght@600;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"Humanize Marketing Digital","description":"Estratégia, conteúdo humanizado, tráfego pago e estrutura digital.","telephone":"+55 11 91489-4352","email":"humanizemktdigital@gmail.com","address":{"@type":"PostalAddress","addressLocality":"São Paulo","addressRegion":"SP","addressCountry":"BR"},"sameAs":["https://www.instagram.com/humanizemarketingdigital"]}
+</script>
+<style>
+:root{
+  --ceu:#36A6DE; --azul:#2A84C3; --profundo:#1B4E9B; --navy:#03106A; --noite:#020A3F;
+  --nevoa:#EEF5FB; --branco:#FFFFFF; --tinta:#0B1640; --indigo:#1C1466; --roxo:#3A228C; --zap:#25D366;
+  --light-bg:#EEF5FB; --light-card:#FFFFFF; --light-ink:#0B1640; --light-muted:#44507A; --light-line:#D3E2F0;
+  --display:'Bebas Neue','Oswald',Impact,'Arial Narrow',sans-serif;
+  --title:'Manrope','Segoe UI',system-ui,sans-serif;
+  --body:'DM Sans','Segoe UI',system-ui,sans-serif;
+  --accent:'Instrument Serif','Playfair Display',Georgia,serif;
+  background:var(--noite);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){--light-bg:#07124E;--light-card:#0B1A63;--light-ink:#EEF5FB;--light-muted:#AFC3E4;--light-line:#1E2F7A}
+}
+:root[data-theme="dark"]{--light-bg:#07124E;--light-card:#0B1A63;--light-ink:#EEF5FB;--light-muted:#AFC3E4;--light-line:#1E2F7A}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--noite);color:var(--branco);font-family:var(--body);font-size:1.0625rem;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--ceu);outline-offset:3px;border-radius:4px}
+.wrap{width:min(1180px,100% - 2.5rem);margin-inline:auto}
+.accent{font-family:var(--accent);font-style:italic;font-weight:400;letter-spacing:0;text-transform:none;
+  background:linear-gradient(100deg,var(--ceu) 10%,#9AD4F2 50%,var(--azul) 95%);background-size:200% 100%;
+  -webkit-background-clip:text;background-clip:text;color:transparent;padding-right:.08em;animation:sheen 8s ease-in-out infinite}
+@keyframes sheen{50%{background-position:100% 0}}
+.dot{display:inline-block;width:.16em;height:.16em;border-radius:50%;background:var(--ceu);margin-left:.06em;box-shadow:0 0 .35em rgba(54,166,222,.8)}
+.eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--title);font-weight:800;font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ceu);margin-bottom:1.2rem}
+.eyebrow::before{content:"";width:28px;height:1px;background:currentColor}
+
+/* botões */
+.btn{position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:.6rem;font-family:var(--title);font-weight:800;font-size:1rem;text-decoration:none;border:0;cursor:pointer;
+  padding:1rem 1.6rem;border-radius:999px;transition:transform .2s ease,box-shadow .2s ease}
+.btn-primary{background:linear-gradient(120deg,var(--ceu),var(--azul));color:var(--branco);box-shadow:0 10px 30px -10px rgba(54,166,222,.7)}
+.btn-primary::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-20deg);animation:shine 6s ease-in-out infinite}
+@keyframes shine{0%,70%{left:-60%}100%{left:130%}}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 38px -12px rgba(54,166,222,.9)}
+.btn-ghost{color:var(--branco);padding:1rem .4rem;background:none;border-radius:0;
+  background-image:linear-gradient(var(--ceu),var(--ceu));background-size:0 1px;background-repeat:no-repeat;background-position:0 100%;border-bottom:1px solid rgba(255,255,255,.3);transition:background-size .35s}
+.btn-ghost:hover{background-size:100% 1px}
+.btn .arrow{transition:transform .2s}
+.btn:hover .arrow{transform:translateX(3px)}
+
+/* NAV */
+.nav{position:fixed;inset:0 0 auto 0;z-index:30;transition:background .3s,backdrop-filter .3s,box-shadow .3s}
+.nav.scrolled{background:rgba(2,10,63,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 1px 0 rgba(255,255,255,.08)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;padding:1.1rem 0}
+.brand{display:flex;align-items:center;gap:.7rem;text-decoration:none}
+.brand img{height:40px;width:auto}
+.brand .mark{width:38px;height:38px;flex:none}
+.brand .wordmark{font-family:var(--title);font-weight:800;font-size:1.3rem;letter-spacing:-.02em;line-height:1}
+.brand .wordmark small{display:block;font-family:var(--body);font-weight:500;font-size:.58rem;letter-spacing:.2em;opacity:.7;margin-top:.25rem}
+.nav ul{display:flex;gap:2rem;list-style:none;font-size:.95rem}
+.nav ul a{text-decoration:none;opacity:.8;transition:opacity .2s}
+.nav ul a:hover{opacity:1}
+.nav .btn{padding:.7rem 1.2rem;font-size:.9rem}
+@media (max-width:900px){.nav ul{display:none}}
+@media (max-width:420px){.nav .btn{padding:.6rem .9rem;font-size:.82rem}.brand .wordmark small{display:none}}
+
+/* HERO céu */
+.sky{position:relative;overflow:hidden;isolation:isolate;
+  background:linear-gradient(180deg,#010732 0%,var(--noite) 16%,var(--indigo) 48%,var(--navy) 78%,#0A2A86 100%)}
+.sky .nebula{position:absolute;inset:-20%;z-index:-2;pointer-events:none;
+  background:
+    radial-gradient(40% 35% at 78% 22%,rgba(88,50,190,.55),transparent 70%),
+    radial-gradient(35% 30% at 20% 35%,rgba(58,34,140,.45),transparent 70%),
+    radial-gradient(45% 30% at 55% 60%,rgba(42,132,195,.22),transparent 70%);
+  filter:blur(10px);animation:drift 40s ease-in-out infinite alternate}
+@keyframes drift{to{transform:translate3d(-4%,3%,0) scale(1.08)}}
+.sky .horizon{position:absolute;left:0;right:0;bottom:0;height:55%;z-index:-2;pointer-events:none;
+  background:radial-gradient(120% 70% at 50% 120%,rgba(54,166,222,.6) 0%,rgba(42,132,195,.25) 35%,transparent 65%)}
+.sky canvas{position:absolute;inset:0;width:100%;height:100%;z-index:-1}
+.hero{min-height:100svh;display:flex;align-items:center}
+.hero .wrap{padding:8rem 0 5rem}
+.hero h1{font-family:var(--display);font-weight:400;font-size:clamp(3.6rem,11vw,8.6rem);line-height:.9;letter-spacing:.005em;max-width:12ch}
+.hero h1 .accent{display:inline-block;font-size:1.02em;line-height:1;margin-top:.05em}
+.hero p.lead{max-width:36rem;margin-top:1.8rem;font-size:clamp(1.05rem,1.6vw,1.25rem);color:#D6E4F7}
+.hero .ctas{display:flex;flex-wrap:wrap;align-items:center;gap:1.2rem 2rem;margin-top:2.4rem}
+.proof{margin-top:4rem;display:flex;flex-wrap:wrap;gap:1.2rem 3rem;color:#BFD3EE;font-size:.95rem;max-width:52rem}
+.proof > div{padding-left:1rem;border-left:1px solid rgba(54,166,222,.45)}
+.proof strong{display:block;font-family:var(--display);font-weight:400;font-size:2rem;line-height:1;color:var(--branco);letter-spacing:.02em}
+.scroll-cue{position:absolute;left:50%;bottom:1.6rem;width:22px;height:36px;border:1.5px solid rgba(255,255,255,.4);border-radius:12px;transform:translateX(-50%)}
+.scroll-cue::after{content:"";position:absolute;left:50%;top:7px;width:3px;height:7px;border-radius:2px;background:#fff;transform:translateX(-50%);animation:cue 2s ease-in-out infinite}
+@keyframes cue{60%{transform:translate(-50%,10px);opacity:0}100%{opacity:0}}
+.intro{opacity:0;transform:translateY(18px);transition:opacity 1.1s ease,transform 1.1s cubic-bezier(.2,.7,.2,1)}
+.loaded .intro{opacity:1;transform:none}
+.loaded .d1{transition-delay:.9s}.loaded .d2{transition-delay:1.25s}.loaded .d3{transition-delay:1.55s}.loaded .d4{transition-delay:2.1s}
+
+/* revelar ao rolar */
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+
+/* LOGOS */
+.logos{background:var(--noite);border-block:1px solid rgba(255,255,255,.07);padding:2.2rem 0;overflow:hidden;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+.logos p{text-align:center;font-size:.95rem;color:#9FB4D9;margin-bottom:1.4rem}
+.track{display:flex;gap:4rem;width:max-content;animation:marquee 38s linear infinite}
+.logos:hover .track{animation-play-state:paused}
+.logo-item{display:flex;align-items:center;height:48px;flex:none}
+.logo-item img{height:48px;width:auto;filter:brightness(0) invert(1);opacity:.7;transition:opacity .2s}
+.logo-item:hover img{opacity:1}
+.logo-item span{font-family:var(--title);font-weight:800;font-size:1.15rem;color:#DDE8F7;opacity:.75;white-space:nowrap}
+@keyframes marquee{to{transform:translateX(-50%)}}
+
+/* seções claras */
+.light{background:var(--light-bg);color:var(--light-ink)}
+section.block{padding:clamp(5rem,10vw,8.5rem) 0}
+h2{font-family:var(--display);font-weight:400;font-size:clamp(2.8rem,6.5vw,5rem);line-height:.95;letter-spacing:.01em}
+.sub{font-size:1.15rem;max-width:40rem;margin-top:1.2rem}
+.light .sub{color:var(--light-muted)}
+
+/* problema */
+.problem{display:grid;grid-template-columns:1.1fr 1fr;gap:4rem;align-items:end}
+.problem ul{list-style:none;border-top:1px solid var(--light-line)}
+.problem li{padding:1.5rem 0;border-bottom:1px solid var(--light-line);display:grid;grid-template-columns:auto 1fr;gap:1rem}
+.problem li::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--ceu);margin-top:.55rem;box-shadow:0 0 0 5px rgba(54,166,222,.15)}
+.problem li b{font-family:var(--title);font-weight:800;display:block;font-size:1.1rem}
+.problem li span{color:var(--light-muted)}
+@media (max-width:860px){.problem{grid-template-columns:1fr;gap:2.5rem}}
+
+/* resultados */
+.results{background:linear-gradient(180deg,var(--navy),var(--noite));position:relative;overflow:hidden}
+.results::before{content:"";position:absolute;width:60rem;height:60rem;right:-30rem;top:-20rem;border-radius:50%;background:radial-gradient(circle,rgba(54,166,222,.14),transparent 60%)}
+.results .head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:1.5rem;margin-bottom:3.5rem;position:relative}
+.results .head .sub{color:#B7C9E6;margin:0;max-width:26rem}
+.case{position:relative;display:grid;grid-template-columns:1fr 1.35fr;gap:2.5rem;padding:2.8rem 1.6rem;margin:0 -1.6rem;border-top:1px solid rgba(255,255,255,.12);border-radius:18px;transition:background .3s}
+.case::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .3s;
+  background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),rgba(54,166,222,.12),transparent 60%)}
+.case:hover::after{opacity:1}
+.case h3{font-family:var(--title);font-weight:800;font-size:1.6rem;letter-spacing:-.01em;line-height:1.15}
+.case .story{color:#C4D4EC;margin-top:.7rem;max-width:26rem}
+.case .tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.1rem}
+.case .tags span{font-size:.8rem;padding:.3rem .75rem;border-radius:999px;border:1px solid rgba(54,166,222,.4);color:#BFE3F6}
+.case a.more{display:inline-block;margin-top:1.3rem;font-weight:700;font-size:.95rem;text-decoration:none;border-bottom:1px solid var(--ceu);padding-bottom:2px}
+.case a.more:hover{color:var(--ceu)}
+.nums{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-content:center}
+.num strong{font-family:var(--display);font-weight:400;font-size:clamp(3.4rem,7vw,5.6rem);line-height:.9;display:block;
+  background:linear-gradient(180deg,#FFFFFF 30%,#9BD2F0);-webkit-background-clip:text;background-clip:text;color:transparent}
+.num span{display:block;color:#B7C9E6;font-size:.98rem;margin-top:.4rem;max-width:15rem}
+@media (max-width:860px){.case{grid-template-columns:1fr;gap:1.8rem;padding:2.4rem 0;margin:0}}
+
+/* frentes */
+.fronts{display:grid;grid-template-columns:repeat(3,1fr);margin-top:3.5rem;border-top:2px solid var(--light-ink)}
+.front{padding:2.2rem 2rem 1rem 0}
+.front + .front{padding-left:2rem;border-left:1px solid var(--light-line)}
+.front .ic{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,var(--ceu),var(--profundo));margin-bottom:1.2rem}
+.front .ic svg{width:22px;height:22px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.front h3{font-family:var(--title);font-weight:800;font-size:1.45rem;letter-spacing:-.01em}
+.front p{color:var(--light-muted);margin-top:.6rem}
+.front ul{list-style:none;margin-top:1.3rem}
+.front li{padding:.55rem 0;border-bottom:1px dashed var(--light-line);display:flex;gap:.7rem;align-items:center}
+.front li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--azul);flex:none}
+.system{margin-top:3.5rem;font-family:var(--title);font-weight:800;font-size:clamp(1.3rem,2.4vw,1.8rem);max-width:44rem;line-height:1.3}
+.system em{font-family:var(--accent);font-weight:400;color:var(--azul);font-size:1.1em}
+@media (max-width:860px){.fronts{grid-template-columns:1fr}.front,.front + .front{padding:2rem 0 1rem;border-left:0;border-top:1px solid var(--light-line)}}
+
+/* parcerias */
+.plans{background:linear-gradient(180deg,var(--noite),var(--navy));position:relative;overflow:hidden}
+.plans .sub{color:#B7C9E6}
+.plan-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:3.5rem;align-items:stretch}
+.plan{position:relative;border-radius:22px;padding:2rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);display:flex;flex-direction:column;overflow:hidden}
+.plan::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .3s;background:radial-gradient(380px circle at var(--mx,50%) var(--my,50%),rgba(54,166,222,.14),transparent 60%)}
+.plan:hover::after{opacity:1}
+.plan.featured{background:linear-gradient(180deg,rgba(54,166,222,.14),rgba(28,20,102,.35));border:1px solid transparent;
+  background-clip:padding-box;box-shadow:0 0 0 1px rgba(54,166,222,.7),0 30px 60px -30px rgba(54,166,222,.6)}
+.plan .badge{position:absolute;top:1.2rem;right:1.2rem;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.3rem .7rem;border-radius:999px;background:var(--ceu);color:var(--noite)}
+.plan small{font-family:var(--title);font-weight:800;letter-spacing:.18em;font-size:.74rem;text-transform:uppercase;color:var(--ceu)}
+.plan h3{font-family:var(--display);font-weight:400;font-size:2.6rem;line-height:1;margin-top:.5rem}
+.plan .for{color:#C4D4EC;margin-top:.6rem;font-size:.97rem}
+.plan ul{list-style:none;margin:1.4rem 0 1.8rem;display:grid;gap:.6rem;font-size:.97rem}
+.plan li{display:flex;gap:.6rem;align-items:flex-start}
+.plan li::before{content:"✦";color:var(--ceu);font-size:.8rem;margin-top:.2rem}
+.plan .btn{margin-top:auto;justify-content:center}
+.plan .btn-outline{color:#fff;border:1px solid rgba(255,255,255,.3);background:none}
+.plan .btn-outline:hover{border-color:var(--ceu);transform:translateY(-2px)}
+.plans .foot{margin-top:2rem;color:#9FB4D9;font-size:.95rem}
+@media (max-width:960px){.plan-grid{grid-template-columns:1fr}}
+
+/* método */
+.method{background:var(--light-card);color:var(--light-ink)}
+.timeline{list-style:none;display:grid;grid-template-columns:repeat(6,1fr);gap:1.2rem;margin-top:3.5rem;position:relative;counter-reset:step}
+.timeline::before,.timeline::after{content:"";position:absolute;left:0;right:0;top:22px;height:2px}
+.timeline::before{background:var(--light-line)}
+.timeline::after{background:linear-gradient(90deg,var(--ceu),var(--azul),var(--navy));transform-origin:left;transform:scaleX(var(--p,0));transition:transform .15s linear}
+.timeline li{position:relative;counter-increment:step;z-index:1}
+.timeline li::before{content:counter(step);display:grid;place-items:center;width:46px;height:46px;border-radius:50%;
+  background:var(--light-card);border:2px solid var(--light-line);font-family:var(--display);font-size:1.4rem;color:var(--light-muted);position:relative;transition:border-color .4s,color .4s,box-shadow .4s}
+.timeline li.on::before{border-color:var(--azul);color:var(--azul);box-shadow:0 0 0 6px rgba(54,166,222,.14)}
+.timeline b{display:block;font-family:var(--title);font-weight:800;margin-top:1.1rem;font-size:1.05rem;line-height:1.25}
+.timeline span{display:block;color:var(--light-muted);font-size:.95rem;margin-top:.4rem}
+@media (max-width:980px){
+  .timeline{grid-template-columns:1fr;gap:0}
+  .timeline::before,.timeline::after{left:22px;right:auto;top:0;bottom:0;width:2px;height:auto}
+  .timeline::after{background:linear-gradient(180deg,var(--ceu),var(--navy));transform-origin:top;transform:scaleY(var(--p,0))}
+  .timeline li{display:grid;grid-template-columns:46px 1fr;column-gap:1.2rem;padding-bottom:1.8rem}
+  .timeline li::before{grid-row:span 2}
+  .timeline b{margin-top:.6rem}
+}
+
+/* quem somos */
+.about{background:radial-gradient(80% 70% at 0% 100%,rgba(54,166,222,.18),transparent 60%),radial-gradient(50% 50% at 100% 0%,rgba(58,34,140,.35),transparent 70%),var(--navy)}
+.about .grid{display:grid;grid-template-columns:1fr 1.1fr;gap:4.5rem;align-items:center}
+.photo{position:relative;aspect-ratio:4/5;border-radius:28px;overflow:hidden;
+  background:linear-gradient(160deg,#0B2A8A,var(--indigo) 55%,var(--noite));box-shadow:0 40px 80px -40px rgba(0,0,0,.7),0 0 0 1px rgba(255,255,255,.08)}
+.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.photo .ph{position:absolute;inset:0;display:grid;place-items:center;text-align:center}
+.photo .ph div{font-family:var(--accent);font-style:italic;font-size:clamp(3.5rem,8vw,6rem);line-height:.95;color:#E6F2FB}
+.photo .ph div span{font-family:var(--display);font-style:normal;font-size:.55em;color:var(--ceu);display:block;margin:.2rem 0}
+.photo canvas{position:absolute;inset:0;width:100%;height:100%}
+.about h2 .accent{font-size:1.05em}
+.about p{color:#C9D8EE;margin-top:1.2rem;max-width:34rem}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2.4rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.14)}
+.duo b{font-family:var(--title);font-weight:800;font-size:1.3rem}
+.duo small{display:block;color:var(--ceu);font-size:.88rem;margin:.2rem 0 .5rem}
+.duo p{margin:0;font-size:.97rem}
+.quote{margin-top:2.4rem;font-family:var(--accent);font-style:italic;font-size:1.6rem;line-height:1.3;color:#E6F2FB;max-width:30rem;padding-left:1.2rem;border-left:2px solid var(--ceu)}
+@media (max-width:900px){.about .grid{grid-template-columns:1fr;gap:3rem}.photo{max-width:440px}}
+@media (max-width:520px){.duo{grid-template-columns:1fr}}
+
+/* para quem */
+.fit{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.segs{display:flex;flex-wrap:wrap;gap:.7rem}
+.segs span{padding:.65rem 1.1rem;border-radius:999px;background:var(--light-card);border:1px solid var(--light-line);font-weight:500;transition:border-color .2s,transform .2s}
+.segs span:hover{border-color:var(--ceu);transform:translateY(-2px)}
+.yesno{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-top:2rem}
+.yesno div{background:var(--light-card);border:1px solid var(--light-line);border-radius:18px;padding:1.4rem}
+.yesno b{font-family:var(--title);font-weight:800;display:block;margin-bottom:.7rem}
+.yesno ul{list-style:none;display:grid;gap:.5rem;color:var(--light-muted);font-size:.97rem}
+.yesno .y li::before{content:"✓ ";color:var(--azul);font-weight:700}
+.yesno .n li::before{content:"– ";color:var(--light-muted)}
+@media (max-width:860px){.fit{grid-template-columns:1fr;gap:2rem}}
+@media (max-width:520px){.yesno{grid-template-columns:1fr}}
+
+/* FAQ */
+.faq{background:var(--light-card);color:var(--light-ink)}
+.faq .grid{display:grid;grid-template-columns:1fr 1.4fr;gap:4rem}
+.faq details{border-bottom:1px solid var(--light-line)}
+.faq details:first-child{border-top:1px solid var(--light-line)}
+.faq summary{list-style:none;cursor:pointer;padding:1.4rem 2.5rem 1.4rem 0;font-family:var(--title);font-weight:800;font-size:1.1rem;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:.2rem;top:50%;transform:translateY(-50%);font-family:var(--body);font-weight:400;font-size:1.6rem;color:var(--azul);transition:transform .3s}
+.faq details[open] summary::after{transform:translateY(-50%) rotate(45deg)}
+.faq details p{color:var(--light-muted);padding-bottom:1.4rem;max-width:40rem}
+@media (max-width:860px){.faq .grid{grid-template-columns:1fr;gap:2rem}}
+
+/* CTA final */
+.final{padding:clamp(6rem,12vw,9rem) 0}
+.final .grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.final h2{font-size:clamp(3rem,7vw,5.6rem)}
+.final .sub{color:#CFDDF2}
+.final .perks{list-style:none;margin-top:2rem;display:grid;gap:.7rem;color:#D6E4F7}
+.final .perks li::before{content:"✦ ";color:var(--ceu)}
+form{background:rgba(2,10,63,.55);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.14);border-radius:24px;padding:2rem;display:grid;gap:1rem;box-shadow:0 40px 80px -40px rgba(0,0,0,.6)}
+label{display:grid;gap:.4rem;font-size:.9rem;font-weight:500;color:#D6E4F7}
+input,select,textarea{font:inherit;font-size:1rem;color:var(--branco);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.2);border-radius:12px;padding:.8rem 1rem;width:100%}
+select option{color:var(--tinta)}
+textarea{min-height:92px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--ceu);box-shadow:0 0 0 3px rgba(54,166,222,.25)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.form-msg{font-size:.9rem;color:#FFD27A;min-height:1.2em}
+form .btn{justify-content:center;width:100%}
+.form-foot{font-size:.85rem;color:#9FB4D9;text-align:center}
+@media (max-width:900px){.final .grid{grid-template-columns:1fr;gap:2.5rem}}
+@media (max-width:520px){.row{grid-template-columns:1fr}form{padding:1.4rem}}
+
+/* rodapé */
+footer{background:var(--noite);padding:3.5rem 0 2.5rem;border-top:1px solid rgba(255,255,255,.08);font-size:.95rem;color:#AFC3E4}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:2rem;align-items:flex-start}
+footer ul{list-style:none;display:grid;gap:.4rem}
+footer a{text-decoration:none}
+footer a:hover{color:var(--ceu)}
+footer .we{font-family:var(--accent);font-style:italic;font-size:1.3rem;color:#E6F2FB;margin-top:.8rem}
+footer .copy{width:100%;font-size:.82rem;color:#6F85B3;margin-top:1rem}
+
+/* WhatsApp flutuante */
+.zap{position:fixed;right:1.2rem;bottom:calc(1.2rem + env(safe-area-inset-bottom,0px));z-index:20;width:60px;height:60px;border-radius:50%;
+  background:var(--zap);display:grid;place-items:center;box-shadow:0 12px 30px -8px rgba(37,211,102,.6);transition:transform .2s}
+.zap::before{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid var(--zap);animation:pulse 2.8s ease-out infinite}
+@keyframes pulse{from{transform:scale(1);opacity:.7}to{transform:scale(1.6);opacity:0}}
+.zap:hover{transform:scale(1.07)}
+.zap svg{width:32px;height:32px;fill:#fff}
+
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important}
+  .intro,.reveal{opacity:1;transform:none;transition:none}
+  .track{flex-wrap:wrap;justify-content:center;width:auto;gap:2rem}
+  .track .dup{display:none}
+  .timeline::after{transform:none!important}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="mark" viewBox="0 0 64 64"><defs><linearGradient id="mg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#36A6DE"/><stop offset="1" stop-color="#fff"/></linearGradient></defs><rect x="1" y="1" width="62" height="62" rx="14" fill="none" stroke="rgba(255,255,255,.25)"/><path d="M17 16h7v13h16V16h7v32h-7V35H24v13h-7z" fill="url(#mg)"/><path d="M51 8l1.6 4.4L57 14l-4.4 1.6L51 20l-1.6-4.4L45 14l4.4-1.6z" fill="#36A6DE"/></symbol>
+</svg>
+
+<nav class="nav" id="nav" aria-label="Principal">
+  <div class="wrap">
+    <a class="brand" href="#inicio" aria-label="Humanize Marketing Digital, início">
+      <img src="logo.png" alt="Humanize Marketing Digital" style="filter:brightness(0) invert(1)" onerror="this.outerHTML='<svg class=&quot;mark&quot;><use href=&quot;#mark&quot;/></svg><span class=&quot;wordmark&quot;>Humanize<small>MARKETING DIGITAL</small></span>'">
+    </a>
+    <ul>
+      <li><a href="#resultados">Resultados</a></li>
+      <li><a href="#o-que-fazemos">O que fazemos</a></li>
+      <li><a href="#parcerias">Parcerias</a></li>
+      <li><a href="#quem-somos">Quem somos</a></li>
+    </ul>
+    <a class="btn btn-primary" href="#diagnostico">Agendar diagnóstico</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="sky hero" id="inicio">
+  <div class="nebula" aria-hidden="true"></div>
+  <div class="horizon" aria-hidden="true"></div>
+  <canvas id="stars-hero" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <p class="eyebrow intro d1">Agência de marketing · São Paulo</p>
+    <h1 class="intro d1">Presença que vira <span class="accent">faturamento.</span></h1>
+    <p class="lead intro d2">Estratégia, conteúdo humanizado, tráfego pago e estrutura digital trabalhando como um só sistema para empresas que já vendem e querem vender muito mais. Nós somos a Ray e a Jaque.</p>
+    <div class="ctas intro d3">
+      <a class="btn btn-primary" href="#diagnostico">Agendar diagnóstico <span class="arrow">→</span></a>
+      <a class="btn btn-ghost" href="#resultados">Ver resultados de clientes</a>
+    </div>
+    <div class="proof intro d4">
+      <div><strong>3x</strong>faturamento do site da Gota de Ouro</div>
+      <div><strong>550 mil</strong>visualizações em um vídeo do Tomo Xapo</div>
+      <div><strong>+1.800</strong>produtos online na Casa de Embalagens</div>
+    </div>
+  </div>
+  <span class="scroll-cue" aria-hidden="true"></span>
+</header>
+
+<section class="logos" aria-label="Marcas atendidas">
+  <p>Marcas que já cresceram com a gente</p>
+  <div class="track" id="track"></div>
+</section>
+
+<main>
+<section class="block light">
+  <div class="wrap problem">
+    <div class="reveal">
+      <p class="eyebrow">O desafio</p>
+      <h2>Você já vende. Mas o digital ainda não trabalha para você<span class="dot"></span></h2>
+      <p class="sub">Sua empresa tem produto, operação e clientes. O que falta é um sistema que transforme presença em pedido, todo mês.</p>
+    </div>
+    <ul class="reveal">
+      <li><div><b>Conteúdo que não vira venda</b><span>Posts bonitos, alcance baixo e nenhum pedido que dê para ligar ao Instagram.</span></div></li>
+      <li><div><b>Anúncio sem estratégia por trás</b><span>Dinheiro investido todo mês sem saber o que voltou em conversa e em venda.</span></div></li>
+      <li><div><b>Canais soltos que não conversam</b><span>Site, WhatsApp, delivery e Google funcionando cada um de um jeito, e o cliente se perdendo no caminho.</span></div></li>
+    </ul>
+  </div>
+</section>
+
+<section class="block results" id="resultados">
+  <div class="wrap">
+    <div class="head reveal">
+      <div><p class="eyebrow">Cases</p><h2>Resultados<br>de <span class="accent">verdade.</span></h2></div>
+      <p class="sub">Cada negócio chegou com um desafio diferente. Todos saíram com o digital virando venda.</p>
+    </div>
+
+    <article class="case glow reveal">
+      <div>
+        <h3>Gota de Ouro Modas</h3>
+        <p class="story">De 35 mil seguidores a uma comunidade que compra: bastidores, influenciadores e uma marca que as clientes chamam pelo apelido.</p>
+        <div class="tags"><span>Humanização</span><span>Conteúdo</span><span>Tráfego pago</span></div>
+        <a class="more" href="case-gota-de-ouro-modas.html">Ver case completo</a>
+      </div>
+      <div class="nums">
+        <div class="num"><strong data-count="3" data-suffix="x">3x</strong><span>faturamento no site</span></div>
+        <div class="num"><strong data-count="2" data-suffix="x">2x</strong><span>vendas na loja física</span></div>
+      </div>
+    </article>
+
+    <article class="case glow reveal">
+      <div>
+        <h3>Adega do Bruninho</h3>
+        <p class="story">Conteúdo, delivery, automação de WhatsApp e tráfego construídos como um só sistema de venda.</p>
+        <div class="tags"><span>Conteúdo</span><span>Tráfego pago</span><span>Delivery</span><span>Estrutura digital</span></div>
+        <a class="more" href="case-adega-do-bruninho.html">Ver case completo</a>
+      </div>
+      <div class="nums">
+        <div class="num"><strong data-count="150.7" data-dec="1" data-prefix="+" data-suffix="%">+150,7%</strong><span>faturamento no site</span></div>
+        <div class="num"><strong data-count="75.3" data-dec="1" data-prefix="+" data-suffix="%">+75,3%</strong><span>número de pedidos</span></div>
+      </div>
+    </article>
+
+    <article class="case glow reveal">
+      <div>
+        <h3>Tomo Xapo</h3>
+        <p class="story">Drinks prontos que ganharam rosto: vídeos humanizados, tráfego e degustações levaram a marca para outros estados.</p>
+        <div class="tags"><span>Conteúdo</span><span>Posicionamento</span><span>Tráfego pago</span></div>
+        <a class="more" href="case-tomo-xapo.html">Ver case completo</a>
+      </div>
+      <div class="nums">
+        <div class="num"><strong data-count="2" data-suffix="x">2x</strong><span>faturamento em cerca de um mês</span></div>
+        <div class="num"><strong data-count="550" data-suffix=" mil">550 mil</strong><span>visualizações orgânicas em um vídeo no TikTok</span></div>
+      </div>
+    </article>
+
+    <article class="case glow reveal">
+      <div>
+        <h3>Casa de Embalagens Cangaíba</h3>
+        <p class="story">Da loja física para uma presença digital completa, com site próprio, canais de venda e comunicação de marca.</p>
+        <div class="tags"><span>Conteúdo</span><span>Branding</span><span>Site</span><span>Delivery</span><span>Tráfego pago</span></div>
+        <a class="more" href="case-casa-de-embalagens.html">Ver case completo</a>
+      </div>
+      <div class="nums">
+        <div class="num"><strong data-count="1800" data-prefix="+">+1.800</strong><span>produtos organizados no site</span></div>
+        <div class="num"><strong data-count="45" data-suffix=" min">45 min</strong><span>prazo de entrega para o cliente final</span></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="block light" id="o-que-fazemos">
+  <div class="wrap">
+    <div class="reveal">
+      <p class="eyebrow">O que fazemos</p>
+      <h2>Tudo o que sua empresa precisa, <span class="accent">integrado.</span></h2>
+      <p class="sub">Não entregamos peças soltas. Conteúdo, mídia e estrutura são pensados juntos, com um objetivo só: vender mais.</p>
+    </div>
+    <div class="fronts">
+      <div class="front reveal">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5z"/></svg></div>
+        <h3>Conteúdo e marca</h3>
+        <p>Sua empresa com rosto, voz e presença todos os dias.</p>
+        <ul><li>Gestão de redes sociais</li><li>Vídeos humanizados</li><li>Branding e identidade visual</li><li>Campanhas e lançamentos</li></ul>
+      </div>
+      <div class="front reveal">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg></div>
+        <h3>Tráfego e vendas</h3>
+        <p>As pessoas certas chegando até você, prontas para comprar.</p>
+        <ul><li>Meta Ads</li><li>Google Ads</li><li>Google Perfil da Empresa</li><li>Sites e landing pages sob medida</li></ul>
+      </div>
+      <div class="front reveal">
+        <div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><path d="M14 17.5h7M17.5 14v7"/></svg></div>
+        <h3>Estrutura digital</h3>
+        <p>Um caminho simples entre o interesse e o pedido.</p>
+        <ul><li>Delivery e catálogos digitais</li><li>Automações de WhatsApp</li><li>E-commerce e canais de venda</li><li>Organização dos canais</li></ul>
+      </div>
+    </div>
+    <p class="system reveal">Tratamos marketing como sistema: arrumamos a estrutura <em>antes</em> de acelerar a mídia.</p>
+  </div>
+</section>
+
+<!-- PARCERIAS -->
+<section class="block plans" id="parcerias">
+  <div class="wrap">
+    <div class="reveal">
+      <p class="eyebrow">Formatos de parceria</p>
+      <h2>Escolha o ritmo do seu <span class="accent">crescimento.</span></h2>
+      <p class="sub">Cada proposta é montada depois do diagnóstico, de acordo com o momento e a meta da sua empresa.</p>
+    </div>
+    <div class="plan-grid">
+      <div class="plan glow reveal">
+        <small>01</small><h3>Estrutura</h3>
+        <p class="for">Para quem precisa organizar a casa antes de acelerar.</p>
+        <ul><li>Diagnóstico completo dos canais</li><li>Site ou landing page de vendas</li><li>Google Perfil da Empresa</li><li>Catálogo, delivery e WhatsApp organizados</li></ul>
+        <a class="btn btn-outline" href="#diagnostico">Quero estruturar</a>
+      </div>
+      <div class="plan featured glow reveal">
+        <span class="badge">Mais escolhido</span>
+        <small>02</small><h3>Crescimento</h3>
+        <p class="for">Para quem já tem estrutura e quer presença que vende todo mês.</p>
+        <ul><li>Gestão de redes e conteúdo humanizado</li><li>Gravações presenciais com a sua equipe</li><li>Meta Ads e Google Ads</li><li>Relatório mensal de resultado</li></ul>
+        <a class="btn btn-primary" href="#diagnostico">Quero crescer <span class="arrow">→</span></a>
+      </div>
+      <div class="plan glow reveal">
+        <small>03</small><h3>Escala</h3>
+        <p class="for">Para operações maiores que querem o digital como canal principal.</p>
+        <ul><li>Tudo do Crescimento</li><li>Branding e campanhas de lançamento</li><li>E-commerce, automações e novos canais</li><li>Reuniões estratégicas quinzenais</li></ul>
+        <a class="btn btn-outline" href="#diagnostico">Quero escalar</a>
+      </div>
+    </div>
+    <p class="foot reveal">Investimento sob proposta, definido após o diagnóstico.</p>
+  </div>
+</section>
+
+<section class="block method" id="metodo">
+  <div class="wrap">
+    <div class="reveal">
+      <p class="eyebrow">Método</p>
+      <h2>Como a gente <span class="accent">trabalha.</span></h2>
+      <p class="sub" style="color:var(--light-muted)">Cada empresa tem uma realidade. Por isso, tudo começa entendendo o seu negócio.</p>
+    </div>
+    <ol class="timeline" id="timeline">
+      <li><b>Diagnóstico</b><span>Entendemos o negócio, o público e onde você quer chegar.</span></li>
+      <li><b>Estrutura</b><span>Atendimento, site, delivery e catálogo prontos para receber cliente.</span></li>
+      <li><b>Posicionamento e conteúdo</b><span>Uma marca humana, reconhecível e presente.</span></li>
+      <li><b>Distribuição</b><span>Orgânico e tráfego pago levando a marca às pessoas certas.</span></li>
+      <li><b>Análise</b><span>Números reais, todo mês, para ajustar o que precisa.</span></li>
+      <li><b>Evolução</b><span>Novos canais conforme a sua empresa cresce.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="block about" id="quem-somos">
+  <div class="wrap grid">
+    <div class="photo reveal">
+      <canvas id="stars-photo" aria-hidden="true"></canvas>
+      <div class="ph" aria-hidden="true"><div>Ray<span>&amp;</span>Jaque</div></div>
+      <img src="ray-e-jaque.jpg" alt="Ray e Jaque, fundadoras da Humanize" onerror="this.remove()">
+    </div>
+    <div class="reveal">
+      <p class="eyebrow">Quem somos</p>
+      <h2>Nós somos a Ray e a <span class="accent">Jaque.</span></h2>
+      <p>A Humanize nasceu da ideia de que empresas não precisam só aparecer no digital. Precisam criar conexão, ser lembradas e transformar essa presença em vendas.</p>
+      <p>Aqui não tem fórmula pronta. A gente vai até a sua empresa, grava com a sua equipe e constrói uma estratégia que faz sentido para o seu público.</p>
+      <div class="duo">
+        <div><b>Ray</b><small>Estratégia, tráfego e estrutura digital</small><p>Visão de crescimento para transformar o digital em resultado.</p></div>
+        <div><b>Jaque</b><small>Conteúdo, criação e atendimento</small><p>Criatividade e proximidade para aproximar empresas e pessoas.</p></div>
+      </div>
+      <p class="quote">Por trás de cada estratégia existem pessoas. Por isso escolhemos humanizar.</p>
+    </div>
+  </div>
+</section>
+
+<section class="block light">
+  <div class="wrap fit">
+    <div class="reveal">
+      <p class="eyebrow">Para quem é</p>
+      <h2>Para empresas prontas para <span class="accent">escalar.</span></h2>
+      <p class="sub">Trabalhamos com negócios que já têm operação, produto e clientes, e querem que o digital acompanhe esse tamanho.</p>
+    </div>
+    <div class="reveal">
+      <div class="segs"><span>Varejo</span><span>Food service</span><span>E-commerce</span><span>Moda</span><span>Imobiliário</span><span>Serviços</span></div>
+      <div class="yesno">
+        <div class="y"><b>É para você se…</b><ul><li>Sua empresa já fatura e tem equipe</li><li>Você quer resultado medido em venda</li><li>Está disposto a investir em mídia</li></ul></div>
+        <div class="n"><b>Não é para você se…</b><ul><li>Procura só posts avulsos</li><li>Espera resultado sem estrutura</li><li>Ainda está validando o produto</li></ul></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block faq">
+  <div class="wrap grid">
+    <div class="reveal">
+      <p class="eyebrow">Dúvidas</p>
+      <h2>Perguntas <span class="accent">frequentes.</span></h2>
+    </div>
+    <div class="reveal">
+      <details><summary>Como funciona o diagnóstico?</summary><p>É uma conversa para entender seu negócio, seus canais atuais e suas metas. A partir dela, montamos uma proposta sob medida.</p></details>
+      <details><summary>Em quanto tempo vejo resultado?</summary><p>Depende do ponto de partida. A estrutura costuma ficar pronta nas primeiras semanas, e os resultados de venda aparecem conforme conteúdo e mídia ganham ritmo. Acompanhamos tudo com números todo mês.</p></details>
+      <details><summary>O investimento em anúncios está incluso?</summary><p>Não. A verba de mídia é paga diretamente às plataformas (Meta e Google). Nós planejamos, gerenciamos e otimizamos esse investimento.</p></details>
+      <details><summary>Vocês gravam na minha empresa?</summary><p>Sim. Gravamos presencialmente com a sua equipe em São Paulo e região, porque é isso que dá rosto e verdade para a sua marca.</p></details>
+      <details><summary>Atendem empresas fora de São Paulo?</summary><p>Sim. Estratégia, tráfego e estrutura funcionam de forma remota. As gravações presenciais são combinadas caso a caso.</p></details>
+    </div>
+  </div>
+</section>
+</main>
+
+<section class="sky final" id="diagnostico">
+  <div class="nebula" aria-hidden="true"></div>
+  <div class="horizon" aria-hidden="true"></div>
+  <canvas id="stars-final" aria-hidden="true"></canvas>
+  <div class="wrap grid">
+    <div class="reveal">
+      <p class="eyebrow">Diagnóstico</p>
+      <h2>Vamos entender o momento do seu <span class="accent">negócio?</span></h2>
+      <p class="sub">Conte um pouco sobre a sua empresa. A gente responde pelo WhatsApp para marcar o diagnóstico.</p>
+      <ul class="perks"><li>Conversa sem compromisso</li><li>Análise dos seus canais atuais</li><li>Proposta sob medida para a sua meta</li></ul>
+    </div>
+    <form id="lead" class="reveal" novalidate>
+      <div class="row">
+        <label>Seu nome<input name="nome" autocomplete="name" required></label>
+        <label>Empresa<input name="empresa" autocomplete="organization" required></label>
+      </div>
+      <div class="row">
+        <label>Segmento
+          <select name="segmento" required>
+            <option value="">Escolha</option>
+            <option>Varejo</option><option>Food service</option><option>E-commerce</option>
+            <option>Moda</option><option>Imobiliário</option><option>Serviços</option><option>Outro</option>
+          </select>
+        </label>
+        <label>Faturamento mensal
+          <select name="faturamento" required>
+            <option value="">Escolha</option>
+            <option>Até R$ 50 mil</option><option>R$ 50 mil a R$ 150 mil</option>
+            <option>R$ 150 mil a R$ 500 mil</option><option>Acima de R$ 500 mil</option>
+          </select>
+        </label>
+      </div>
+      <label>O que você quer resolver agora?<textarea name="objetivo" placeholder="Ex.: vender mais pelo site, organizar o delivery, fortalecer a marca"></textarea></label>
+      <p class="form-msg" id="form-msg" role="alert"></p>
+      <button class="btn btn-primary" type="submit">Enviar e abrir o WhatsApp <span class="arrow">→</span></button>
+      <p class="form-foot">Prefere falar direto? Chame no (11) 91489-4352.</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <a class="brand" href="#inicio"><svg class="mark"><use href="#mark"/></svg><span class="wordmark">Humanize<small>MARKETING DIGITAL</small></span></a>
+      <p class="we">Nós somos a Ray e a Jaque.</p>
+    </div>
+    <ul>
+      <li><a href="https://www.instagram.com/humanizemarketingdigital" target="_blank" rel="noopener">@humanizemarketingdigital</a></li>
+      <li><a href="https://wa.me/5511914894352" target="_blank" rel="noopener">(11) 91489-4352</a></li>
+      <li><a href="mailto:humanizemktdigital@gmail.com">humanizemktdigital@gmail.com</a></li>
+      <li>São Paulo, SP</li>
+    </ul>
+    <p class="copy">© 2026 Humanize Marketing Digital. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<a class="zap" href="https://wa.me/5511914894352?text=Ol%C3%A1!%20Quero%20falar%20com%20a%20Humanize." target="_blank" rel="noopener" aria-label="Falar com a Humanize no WhatsApp">
+  <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C8.8 3 3 8.7 3 15.8c0 2.3.6 4.5 1.8 6.5L3 29l6.9-1.8c1.9 1 4 1.6 6.1 1.6 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.4c-1.9 0-3.8-.5-5.4-1.5l-.4-.2-4.1 1.1 1.1-4-.3-.4c-1.1-1.7-1.6-3.6-1.6-5.6 0-5.9 4.8-10.6 10.8-10.6s10.8 4.8 10.8 10.6S22 26.4 16 26.4zm5.9-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.3.3-.6.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.7s1.2 3.2 1.4 3.4c.2.2 2.4 3.6 5.8 5 .8.4 1.4.6 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg>
+</a>
+
+<script>
+(function(){
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ===== Céu estrelado ===== */
+  function makeSky(canvas, opts){
+    if(!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const density = opts.density || 1;
+    let w=0,h=0,stars=[],start=performance.now(),shoot=null,nextShoot=start+5000;
+    let mx=0,my=0,scrollY=0,visible=true;
+
+    function build(){
+      const dpr = Math.min(window.devicePixelRatio||1,2);
+      const r = canvas.getBoundingClientRect();
+      w=r.width; h=r.height;
+      canvas.width=w*dpr; canvas.height=h*dpr;
+      ctx.setTransform(dpr,0,0,dpr,0,0);
+      const n = Math.round(Math.min(160, Math.max(60, w*h/8000)) * density);
+      stars = Array.from({length:n},()=>{
+        const depth = Math.random();
+        return {
+          x:Math.random()*w, y:Math.random()*h*0.92,
+          r: depth>.93 ? 1.6+Math.random()*1.1 : .4+Math.random()*1.05,
+          depth, base:.35+Math.random()*.65,
+          tw:.6+Math.random()*1.8, ph:Math.random()*Math.PI*2,
+          delay: opts.delayed ? Math.pow(Math.random(),1.3)*2600 : 0,
+          hue: Math.random()<.2 ? '#D9CCFF' : Math.random()<.4 ? '#BFE6FA' : '#FFFFFF'
+        };
+      });
+    }
+
+    function draw(now){
+      const t = now-start;
+      ctx.clearRect(0,0,w,h);
+      for(const s of stars){
+        let a = 1;
+        if(!reduce && s.delay){ a = Math.min(1, Math.max(0,(t-s.delay)/900)); a = a*a*(3-2*a); }
+        if(a<=0) continue;
+        const twinkle = reduce ? 1 : .72 + .28*Math.sin(now/1000*s.tw + s.ph);
+        const alpha = s.base*twinkle*a;
+        const px = s.x + (reduce?0: mx*s.depth*16);
+        const py = s.y + (reduce?0: my*s.depth*12 - scrollY*s.depth*0.25);
+        ctx.globalAlpha = alpha;
+        ctx.fillStyle = s.hue;
+        ctx.beginPath(); ctx.arc(px,py,s.r,0,Math.PI*2); ctx.fill();
+        if(s.r>1.5){
+          ctx.globalAlpha = alpha*.22;
+          ctx.fillStyle='#36A6DE';
+          ctx.beginPath(); ctx.arc(px,py,s.r*3.4,0,Math.PI*2); ctx.fill();
+          ctx.globalAlpha = alpha*.5;
+          ctx.fillRect(px-s.r*3,py-.3,s.r*6,.6);
+          ctx.fillRect(px-.3,py-s.r*3,.6,s.r*6);
+        }
+      }
+      ctx.globalAlpha=1;
+      if(opts.shooting && !reduce){
+        if(!shoot && now>nextShoot) shoot={x:w*(.35+Math.random()*.55), y:h*(.05+Math.random()*.25), life:0};
+        if(shoot){
+          shoot.life += 16;
+          const p = shoot.life/900, len=130;
+          const x = shoot.x - p*w*.28, y = shoot.y + p*h*.16;
+          const g = ctx.createLinearGradient(x,y,x+len,y-len*.57);
+          g.addColorStop(0,'rgba(255,255,255,'+(.9*(1-p))+')'); g.addColorStop(1,'rgba(54,166,222,0)');
+          ctx.strokeStyle=g; ctx.lineWidth=1.4;
+          ctx.beginPath(); ctx.moveTo(x,y); ctx.lineTo(x+len,y-len*.57); ctx.stroke();
+          if(p>=1){ shoot=null; nextShoot=now+10000+Math.random()*6000; }
+        }
+      }
+    }
+
+    function loop(now){ if(visible) draw(now); requestAnimationFrame(loop); }
+    build();
+    if(reduce) draw(performance.now()); else requestAnimationFrame(loop);
+
+    let rt; window.addEventListener('resize',()=>{clearTimeout(rt); rt=setTimeout(()=>{build(); if(reduce) draw(performance.now());},150);});
+    if(!reduce && opts.parallax){
+      if(window.matchMedia('(pointer:fine)').matches)
+        window.addEventListener('mousemove',e=>{ mx=e.clientX/innerWidth-.5; my=e.clientY/innerHeight-.5; },{passive:true});
+      window.addEventListener('scroll',()=>{ scrollY=window.scrollY; },{passive:true});
+    }
+    if('IntersectionObserver' in window) new IntersectionObserver(es=>{ visible = es[0].isIntersecting; }).observe(canvas);
+  }
+
+  makeSky(document.getElementById('stars-hero'), {delayed:true, shooting:true, parallax:true});
+  makeSky(document.getElementById('stars-final'), {density:.8, shooting:true});
+  makeSky(document.getElementById('stars-photo'), {density:.35});
+  requestAnimationFrame(()=>document.body.classList.add('loaded'));
+
+  /* ===== Nav ao rolar ===== */
+  const nav = document.getElementById('nav');
+  const onScroll = ()=> nav.classList.toggle('scrolled', scrollY>40);
+  addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  /* ===== Revelar ao rolar ===== */
+  const revs = document.querySelectorAll('.reveal');
+  if(!reduce && 'IntersectionObserver' in window){
+    const ro = new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); ro.unobserve(e.target); } }),{threshold:.12, rootMargin:'0px 0px -40px 0px'});
+    revs.forEach(r=>ro.observe(r));
+  } else revs.forEach(r=>r.classList.add('in'));
+
+  /* ===== Brilho que segue o cursor ===== */
+  document.querySelectorAll('.glow').forEach(el=>el.addEventListener('pointermove',e=>{
+    const r=el.getBoundingClientRect(); el.style.setProperty('--mx',(e.clientX-r.left)+'px'); el.style.setProperty('--my',(e.clientY-r.top)+'px');
+  }));
+
+  /* ===== Linha do tempo ===== */
+  const tl = document.getElementById('timeline'), steps = tl.querySelectorAll('li');
+  function tlUpdate(){
+    const r = tl.getBoundingClientRect(), vh = innerHeight;
+    const p = reduce ? 1 : Math.min(1, Math.max(0, (vh*.8 - r.top) / (r.height + vh*.3)));
+    tl.style.setProperty('--p', p.toFixed(3));
+    steps.forEach((s,i)=> s.classList.toggle('on', p >= i/steps.length));
+  }
+  addEventListener('scroll', tlUpdate, {passive:true}); addEventListener('resize', tlUpdate); tlUpdate();
+
+  /* ===== Faixa de logos ===== */
+  const marcas = [
+    ['Gota de Ouro','logos/gota-de-ouro.png'],
+    ['Adega do Bruninho','logos/adega-do-bruninho.png'],
+    ['Boteco do Máskara','logos/boteco-do-maskara.png'],
+    ['Casa de Embalagens Cangaíba','logos/casa-de-embalagens-cangaiba.png'],
+    ['Doggie Dogg Gourmet','logos/doggie-dogg-gourmet.png'],
+    ['Restaurante Vivendo','logos/restaurante-vivendo.png'],
+    ['Tomo Xapo','logos/tomo-xapo.png']
+  ];
+  const track = document.getElementById('track');
+  function item(m, dup){
+    const d = document.createElement('div'); d.className='logo-item'+(dup?' dup':'');
+    if(dup) d.setAttribute('aria-hidden','true');
+    const img = new Image(); img.alt = dup?'':m[0]; img.src = m[1]; img.loading='lazy';
+    img.onerror = ()=>{ const s=document.createElement('span'); s.textContent=m[0]; img.replaceWith(s); };
+    d.appendChild(img); return d;
+  }
+  marcas.forEach(m=>track.appendChild(item(m,false)));
+  marcas.forEach(m=>track.appendChild(item(m,true)));
+
+  /* ===== Contagem dos números ===== */
+  const fmt = (v,dec)=> v.toLocaleString('pt-BR',{minimumFractionDigits:dec,maximumFractionDigits:dec});
+  const nums = document.querySelectorAll('[data-count]');
+  if(!reduce && 'IntersectionObserver' in window){
+    nums.forEach(el=>{ el.dataset.final = el.textContent; el.textContent = (el.dataset.prefix||'')+fmt(0,+(el.dataset.dec||0))+(el.dataset.suffix||''); });
+    const io = new IntersectionObserver(es=>{
+      es.forEach(e=>{
+        if(!e.isIntersecting) return; io.unobserve(e.target);
+        const el=e.target, to=+el.dataset.count, dec=+(el.dataset.dec||0), t0=performance.now(), dur=1400;
+        (function step(now){
+          const p=Math.min(1,(now-t0)/dur), k=1-Math.pow(1-p,3);
+          el.textContent=(el.dataset.prefix||'')+fmt(to*k,dec)+(el.dataset.suffix||'');
+          if(p<1) requestAnimationFrame(step); else el.textContent=el.dataset.final;
+        })(t0);
+      });
+    },{threshold:.5});
+    nums.forEach(n=>io.observe(n));
+  }
+
+  /* ===== Formulário → WhatsApp ===== */
+  const form = document.getElementById('lead'), msg = document.getElementById('form-msg');
+  form.addEventListener('submit', e=>{
+    e.preventDefault();
+    const f = Object.fromEntries(new FormData(form));
+    const faltando = [];
+    if(!f.nome.trim()) faltando.push('seu nome');
+    if(!f.empresa.trim()) faltando.push('o nome da empresa');
+    if(!f.segmento) faltando.push('o segmento');
+    if(!f.faturamento) faltando.push('a faixa de faturamento');
+    if(faltando.length){ msg.textContent = 'Preencha '+faltando.join(', ')+' para continuar.'; return; }
+    msg.textContent='';
+    const texto = `Olá! Quero agendar um diagnóstico com a Humanize.\n\nNome: ${f.nome}\nEmpresa: ${f.empresa}\nSegmento: ${f.segmento}\nFaturamento mensal: ${f.faturamento}`+(f.objetivo.trim()?`\nO que quero resolver: ${f.objetivo.trim()}`:'');
+    window.open('https://wa.me/5511914894352?text='+encodeURIComponent(texto),'_blank','noopener');
+  });
+})();
+</script>
+</body>
+</html>
