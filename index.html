@@ -24,6 +24,8 @@
   <meta property="og:image" content="https://mimo-personalizados.vercel.app/kit-presente-caneca-abraco.webp" />
   <meta name="twitter:card" content="summary_large_image" />
 
+  <script>document.documentElement.classList.add('js');</script>
+
   <style>
     :root {
       --rosa-claro: #fbe7ee;
@@ -185,22 +187,27 @@
       display: block;
     }
 
-    /* HERO */
+    /* HERO — a cesta se monta conforme a rolagem */
     .hero {
-      min-height: 760px;
+      position: relative;
+      background: #fbd3e2;
+    }
+
+    .hero-sticky {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 118px 0 34px;
+      overflow: hidden;
       background:
         radial-gradient(circle at 88% 14%, rgba(236, 95, 140, .30), transparent 30%),
         radial-gradient(circle at 5% 75%, rgba(255,255,255,.75), transparent 28%),
         linear-gradient(160deg, #fde4ee 0%, #fbd3e2 55%, #f8c0d6 100%);
-      display: flex;
-      align-items: center;
-      padding: 150px 0 90px;
-      overflow: hidden;
-      position: relative;
     }
 
-    .hero::before,
-    .hero::after {
+    .hero-sticky::before,
+    .hero-sticky::after {
       content: "";
       position: absolute;
       border-radius: 50%;
@@ -208,14 +215,14 @@
       filter: blur(2px);
     }
 
-    .hero::before {
+    .hero-sticky::before {
       width: 260px;
       height: 260px;
       right: -90px;
       top: 140px;
     }
 
-    .hero::after {
+    .hero-sticky::after {
       width: 180px;
       height: 180px;
       left: -70px;
@@ -223,12 +230,48 @@
     }
 
     .hero-grid {
+      width: min(1320px, calc(100% - 56px));
       display: grid;
-      grid-template-columns: 1.05fr .95fr;
+      grid-template-columns: .8fr 1.2fr;
       align-items: center;
-      gap: 65px;
+      gap: 36px;
       position: relative;
       z-index: 1;
+    }
+
+    .hero h1 {
+      font-size: clamp(40px, 4.3vw, 62px);
+    }
+
+    /* só prende a tela e anima se o JavaScript estiver ligado e a pessoa não pediu menos movimento */
+    @media (prefers-reduced-motion: no-preference) {
+      .js .hero {
+        height: calc(100vh + 330vh);
+      }
+
+      .js .hero .hero-sticky {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        min-height: 0;
+      }
+
+      .js .hero .piece {
+        opacity: 0;
+      }
+
+      .js .hero .stage-hint {
+        display: flex;
+      }
+
+      .js .hero .stage-caption {
+        display: block;
+      }
+
+      @supports (height: 100svh) {
+        .js .hero { height: calc(100svh + 330svh); }
+        .js .hero .hero-sticky { height: 100svh; }
+      }
     }
 
     .eyebrow {
@@ -311,36 +354,109 @@
     }
 
     .hero-visual {
-      min-height: 500px;
+      height: calc(100vh - 150px);
+      max-height: 920px;
+      min-height: 420px;
       display: grid;
       place-items: center;
       position: relative;
+      container-type: size;
     }
 
-    .visual-card {
-      width: min(420px, 100%);
-      aspect-ratio: 4 / 5;
-      border-radius: 220px 220px 36px 36px;
-      background: var(--branco);
-      box-shadow: 0 30px 60px rgba(201, 66, 111, .25);
+    .stage {
       position: relative;
-      overflow: hidden;
-      border: 6px solid var(--branco);
-      outline: 2px solid rgba(233, 79, 134, .45);
-      outline-offset: 8px;
-      animation: heroZoom 1.4s ease-out both;
+      z-index: 1;
+      width: min(100cqw, calc(100cqh * .9449));
+      aspect-ratio: 840 / 889;
     }
 
-    .visual-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 214px 214px 30px 30px;
+    .stage-inner {
+      position: absolute;
+      inset: 0;
+      perspective: 1400px;
+      perspective-origin: 50% 35%;
     }
 
-    @keyframes heroZoom {
-      from { opacity: 0; transform: scale(.94); }
-      to { opacity: 1; transform: scale(1); }
+    .piece {
+      position: absolute;
+      height: auto;
+      transform: rotate(var(--rot, 0deg));
+      transform-origin: 50% 50%;
+      will-change: transform, opacity;
+      backface-visibility: hidden;
+      pointer-events: none;
+      user-select: none;
+      -webkit-user-drag: none;
+      filter: drop-shadow(0 8px 10px rgba(96, 36, 62, .30));
+    }
+
+    .piece[data-piece="caixa"] {
+      filter: drop-shadow(0 24px 28px rgba(96, 36, 62, .28));
+    }
+
+    .piece[data-piece^="palha"] {
+      filter: drop-shadow(0 3px 4px rgba(96, 36, 62, .20));
+    }
+
+    .piece[data-piece^="petala"] {
+      filter: drop-shadow(0 5px 6px rgba(96, 36, 62, .28));
+    }
+
+    .stage-hint {
+      display: none;
+      position: absolute;
+      inset: 0;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      color: var(--rosa-vivo);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      text-align: center;
+      pointer-events: none;
+      transition: opacity .35s ease;
+    }
+
+    .stage-hint svg {
+      width: 30px;
+      height: 30px;
+      animation: dica 1.6s ease-in-out infinite;
+    }
+
+    .stage-hint.is-hidden {
+      opacity: 0;
+    }
+
+    @keyframes dica {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(8px); }
+    }
+
+    .stage-caption {
+      display: none;
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+      padding: 7px 16px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.92);
+      color: var(--rosa-escuro);
+      font-size: 12.5px;
+      font-weight: 800;
+      letter-spacing: .05em;
+      white-space: nowrap;
+      box-shadow: 0 8px 20px rgba(201, 66, 111, .18);
+      opacity: 0;
+      transition: opacity .3s ease;
+      pointer-events: none;
+    }
+
+    .stage-caption.is-on {
+      opacity: 1;
     }
 
     .sparkle {
@@ -1126,9 +1242,9 @@
         display: none;
       }
 
-      .hero {
-        padding: 104px 0 60px;
-        min-height: auto;
+      .hero-sticky {
+        padding: 84px 0 16px;
+        align-items: stretch;
       }
 
       .hero-grid,
@@ -1138,7 +1254,21 @@
       }
 
       .hero-grid {
-        gap: 34px;
+        width: min(100% - 40px, 1140px);
+        grid-template-rows: auto minmax(0, 1fr);
+        gap: 12px;
+      }
+
+      .hero h1 {
+        font-size: clamp(34px, 6.4vw, 48px);
+      }
+
+      .hero p {
+        margin: 12px 0 16px;
+      }
+
+      .hero .btn {
+        padding: 14px 24px;
       }
 
       .business-grid {
@@ -1146,7 +1276,10 @@
       }
 
       .hero-visual {
-        min-height: 0;
+        height: auto;
+        max-height: none;
+        min-height: 300px;
+        overflow: hidden;
       }
 
       .product-grid {
@@ -1163,8 +1296,8 @@
         width: min(100% - 28px, 1140px);
       }
 
-      .hero {
-        padding: 96px 0 52px;
+      .hero-sticky {
+        padding: 80px 0 14px;
       }
 
       .eyebrow {
@@ -1176,9 +1309,19 @@
         font-size: clamp(38px, 11vw, 44px);
       }
 
+      .hero h1 {
+        font-size: clamp(30px, 8.8vw, 36px);
+      }
+
       .hero p {
-        font-size: 16px;
-        margin: 18px 0 24px;
+        font-size: 14.5px;
+        line-height: 1.5;
+        margin: 10px 0 14px;
+      }
+
+      .stage-caption {
+        font-size: 11.5px;
+        padding: 5px 12px;
       }
 
       .hero .btn,
@@ -1188,11 +1331,7 @@
       }
 
       .hero-grid {
-        gap: 30px;
-      }
-
-      .visual-card {
-        width: min(320px, 84%);
+        gap: 10px;
       }
 
       .product-grid,
@@ -1238,6 +1377,12 @@
         top: auto;
         bottom: 24px;
         transform: none;
+      }
+    }
+
+    @media (max-width: 900px) and (max-height: 700px) {
+      .hero .eyebrow {
+        display: none;
       }
     }
 
@@ -1292,29 +1437,50 @@
   </header>
 
   <main>
-    <!-- SEÇÃO 1 — HERO -->
+    <!-- SEÇÃO 1 — HERO (a cesta se monta conforme a pessoa rola a página) -->
     <section class="hero" id="inicio">
-      <div class="container hero-grid">
-        <div>
-          <div class="eyebrow">Feito especialmente para você</div>
-          <h1>Momentos especiais merecem detalhes <em>inesquecíveis.</em></h1>
-          <p>
-            Transformamos suas ideias em personalizados únicos para fazer parte
-            dos momentos mais importantes da sua história.
-          </p>
+      <div class="hero-sticky">
+        <div class="container hero-grid">
+          <div class="hero-text">
+            <div class="eyebrow">Feito especialmente para você</div>
+            <h1>Momentos especiais merecem detalhes <em>inesquecíveis.</em></h1>
+            <p>
+              Transformamos suas ideias em personalizados únicos para fazer parte
+              dos momentos mais importantes da sua história.
+            </p>
 
-          <a class="btn" href="https://wa.me/5511986096371?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20criar%20algo%20especial." target="_blank" rel="noopener">
-            QUERO CRIAR ALGO ESPECIAL
-          </a>
-        </div>
+            <a class="btn" href="https://wa.me/5511986096371?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20criar%20algo%20especial." target="_blank" rel="noopener">
+              QUERO CRIAR ALGO ESPECIAL
+            </a>
+          </div>
 
-        <div class="hero-visual">
-          <span class="sparkle s1" aria-hidden="true">✧</span>
-          <span class="sparkle s2" aria-hidden="true">♡</span>
-          <span class="sparkle s3" aria-hidden="true">✦</span>
+          <div class="hero-visual">
+            <span class="sparkle s1" aria-hidden="true">✧</span>
+            <span class="sparkle s2" aria-hidden="true">♡</span>
+            <span class="sparkle s3" aria-hidden="true">✦</span>
 
-          <div class="visual-card">
-            <img src="kit-presente-caneca-abraco.webp" alt="Kit presente com caneca personalizada 'Meu lugar favorito é dentro do seu abraço' e chocolates" width="1122" height="1402" fetchpriority="high">
+            <div class="stage" role="img" aria-label="Kit presente montado em uma caixa com palha: caneca personalizada, quadro em azulejo, Nutella, espumante, Ferrero Rocher e pétalas de rosa">
+              <div class="stage-inner">
+            <img class="piece" data-piece="caixa" src="cesta/caixa.webp" alt="" width="680" height="729" decoding="async" style="left:9.524%;top:8.999%;width:80.952%;--rot:0deg">
+            <img class="piece" data-piece="palha1" src="cesta/palha.webp" alt="" width="800" height="618" decoding="async" style="left:11.905%;top:39.708%;width:76.190%;--rot:0deg">
+            <img class="piece" data-piece="palha2" src="cesta/palha.webp" alt="" width="800" height="618" decoding="async" style="left:11.905%;top:11.586%;width:76.190%;--rot:180deg">
+            <img class="piece" data-piece="caneca" src="cesta/caneca.webp" alt="" width="800" height="742" decoding="async" style="left:16.429%;top:53.768%;width:31.190%;--rot:0deg">
+            <img class="piece" data-piece="nutella" src="cesta/nutella.webp" alt="" width="615" height="800" decoding="async" style="left:48.810%;top:31.046%;width:18.810%;--rot:0deg">
+            <img class="piece" data-piece="azulejo" src="cesta/azulejo.webp" alt="" width="753" height="800" decoding="async" style="left:16.667%;top:21.147%;width:30.000%;--rot:0deg">
+            <img class="piece" data-piece="shandon" src="cesta/shandon.webp" alt="" width="381" height="800" decoding="async" style="left:65.476%;top:21.147%;width:18.810%;--rot:0deg">
+            <img class="piece" data-piece="ferrero" src="cesta/ferrero.webp" alt="" width="800" height="432" decoding="async" style="left:49.048%;top:65.917%;width:35.238%;--rot:0deg">
+            <img class="piece" data-piece="petala1" src="cesta/petalas.webp" alt="" width="800" height="550" decoding="async" style="left:4.048%;top:10.004%;width:17.857%;--rot:-20deg">
+            <img class="piece" data-piece="petala2" src="cesta/petalas.webp" alt="" width="800" height="550" decoding="async" style="left:49.881%;top:22.286%;width:13.810%;--rot:15deg">
+            <img class="piece" data-piece="petala3" src="cesta/petalas.webp" alt="" width="800" height="550" decoding="async" style="left:82.738%;top:84.020%;width:17.857%;--rot:25deg">
+            <img class="piece" data-piece="petala4" src="cesta/petalas.webp" alt="" width="800" height="550" decoding="async" style="left:5.119%;top:83.999%;width:14.286%;--rot:-35deg">
+              </div>
+
+              <div class="stage-hint" aria-hidden="true">
+                <span>Role para montar o seu kit</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v16M5 13l7 7 7-7"/></svg>
+              </div>
+              <div class="stage-caption" aria-hidden="true"></div>
+            </div>
           </div>
         </div>
       </div>
@@ -1619,6 +1785,142 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // HERO — a cesta se monta conforme a rolagem (caixa, palha, caneca, Nutella, azulejo, espumante, Ferrero, pétalas)
+    (() => {
+      const hero = document.getElementById('inicio');
+      const stage = hero && hero.querySelector('.stage');
+      if (!hero || !stage) return;
+
+      const semMovimento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (semMovimento) { document.documentElement.classList.remove('js'); return; }
+
+      try {
+        const hint = hero.querySelector('.stage-hint');
+        const caption = hero.querySelector('.stage-caption');
+
+        // s = onde a peça começa a descer (0 a 1 da rolagem), e = onde ela pousa
+        // y = altura de onde cai (em telas), x = deslocamento lateral, rx = inclinação 3D, rz = giro, sc = escala inicial
+        const T = {
+          caixa:   { s: .03, e: .15, y: .60, x:  0,   rx: 38, rz: -6,  sc: .92 },
+          palha1:  { s: .16, e: .27, y: .80, x: -.03, rx: 25, rz:  8,  sc: 1.08 },
+          palha2:  { s: .19, e: .30, y: .80, x:  .04, rx: 25, rz: -8,  sc: 1.08 },
+          caneca:  { s: .31, e: .41, y: .90, x: -.05, rx: 40, rz: -14, sc: 1.06 },
+          nutella: { s: .42, e: .52, y: .90, x:  .03, rx: 40, rz:  10, sc: 1.06 },
+          azulejo: { s: .53, e: .63, y: .90, x: -.04, rx: 40, rz: -10, sc: 1.06 },
+          shandon: { s: .64, e: .74, y: .90, x:  .05, rx: 40, rz:  16, sc: 1.06 },
+          ferrero: { s: .75, e: .85, y: .90, x:  .04, rx: 40, rz: -12, sc: 1.06 },
+          petala1: { s: .84, e: .93, petala: true, y: 1.0, amp: .07, fase: 0,   giro: 200, rx: 70 },
+          petala2: { s: .86, e: .94, petala: true, y: 1.0, amp: .06, fase: 1.7, giro: -170, rx: 60 },
+          petala3: { s: .86, e: .95, petala: true, y: 1.0, amp: .08, fase: 3.1, giro: 220, rx: 75 },
+          petala4: { s: .88, e: .96, petala: true, y: 1.0, amp: .07, fase: 4.6, giro: -190, rx: 65 }
+        };
+
+        const LEGENDAS = [
+          [.03, '1 · A caixa'],
+          [.16, '2 · A palha'],
+          [.31, '3 · A caneca personalizada'],
+          [.42, '4 · Nutella'],
+          [.53, '5 · O quadro em azulejo'],
+          [.64, '6 · O espumante'],
+          [.75, '7 · Ferrero Rocher'],
+          [.84, '8 · Pétalas de rosa'],
+          [.97, 'Pronto! Feito com carinho ♡']
+        ];
+
+        const pecas = [...hero.querySelectorAll('.piece')].map(el => {
+          const cfg = T[el.dataset.piece];
+          const rot = parseFloat(getComputedStyle(el).getPropertyValue('--rot')) || 0;
+          return { el, cfg, rot, ultimo: -1 };
+        }).filter(p => p.cfg);
+
+        const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
+        const easeOut = t => 1 - Math.pow(1 - t, 4);
+        const easeSuave = t => .5 - Math.cos(Math.PI * t) / 2;
+
+        let alturaTela = window.innerHeight;
+        let larguraPalco = stage.offsetWidth;
+        let esperando = false;
+        let legendaAtual = null;
+
+        function medir() {
+          alturaTela = window.innerHeight;
+          larguraPalco = stage.offsetWidth;
+          ultimosReset();
+          atualizar();
+        }
+
+        function ultimosReset() { pecas.forEach(p => { p.ultimo = -1; }); }
+
+        function desenhar(p, prog) {
+          const c = p.cfg;
+          const t = clamp((prog - c.s) / (c.e - c.s), 0, 1);
+          if (t === p.ultimo) return;
+          p.ultimo = t;
+
+          let y, x, rot, rx, esc, op;
+          if (c.petala) {
+            const q = easeSuave(t);
+            y = -(1 - q) * alturaTela * c.y;
+            x = Math.sin(t * Math.PI * 3 + c.fase) * c.amp * larguraPalco * (1 - t);
+            rot = p.rot + c.giro * (1 - q);
+            rx = c.rx * (1 - q);
+            esc = 1;
+            op = clamp(t * 5, 0, 1);
+          } else {
+            const q = easeOut(t);
+            y = -(1 - q) * alturaTela * c.y;
+            x = (1 - q) * larguraPalco * c.x;
+            rot = p.rot + c.rz * (1 - q);
+            rx = c.rx * (1 - q);
+            // pequeno "tum" quando a peça encosta no lugar
+            const pouso = t > .8 ? Math.sin(((t - .8) / .2) * Math.PI) * .03 : 0;
+            esc = 1 + (c.sc - 1) * (1 - q) + pouso;
+            op = clamp(t * 3, 0, 1);
+          }
+
+          p.el.style.opacity = op;
+          p.el.style.transform =
+            'translate3d(' + x.toFixed(1) + 'px,' + y.toFixed(1) + 'px,0) ' +
+            'rotate(' + rot.toFixed(2) + 'deg) rotateX(' + rx.toFixed(2) + 'deg) scale(' + esc.toFixed(3) + ')';
+        }
+
+        function atualizar() {
+          esperando = false;
+          const topo = hero.getBoundingClientRect().top;
+          const total = hero.offsetHeight - alturaTela;
+          const prog = total > 0 ? clamp(-topo / total, 0, 1) : 1;
+
+          pecas.forEach(p => desenhar(p, prog));
+
+          if (hint) hint.classList.toggle('is-hidden', prog > .02);
+
+          if (caption) {
+            let texto = '';
+            for (const [inicio, rotulo] of LEGENDAS) if (prog >= inicio) texto = rotulo;
+            if (texto !== legendaAtual) {
+              legendaAtual = texto;
+              if (texto) caption.textContent = texto;
+              caption.classList.toggle('is-on', !!texto);
+            }
+          }
+        }
+
+        function aoRolar() {
+          if (!esperando) { esperando = true; requestAnimationFrame(atualizar); }
+        }
+
+        window.addEventListener('scroll', aoRolar, { passive: true });
+        window.addEventListener('resize', medir);
+        window.addEventListener('orientationchange', medir);
+        window.addEventListener('load', medir);
+        medir();
+      } catch (erro) {
+        // se algo falhar, mostra a cesta pronta (sem animação) em vez de deixar a seção vazia
+        document.documentElement.classList.remove('js');
+        console.error('Animação da cesta desativada:', erro);
+      }
+    })();
 
     // MENU DO CELULAR — abre/fecha o painel e fecha ao escolher um link
     (() => {
