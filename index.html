@@ -28,19 +28,40 @@
 
   <style>
     :root {
-      --rosa-claro: #fbe7ee;
-      --rosa-bebe: #fff1f5;
-      --rosa: #f27aa3;
-      --rosa-forte: #ec5f8c;
-      --rosa-vivo: #e94f86;
-      --rosa-escuro: #c9426f;
-      --creme: #fffaf5;
+      /* SUPERFÍCIES — matiz único 338°, três degraus deliberados */
+      --sup-1: #fef4f7;
+      --sup-2: #fce6ee;
+      --sup-3: #f9d5e2;
       --branco: #ffffff;
-      --texto: #4e4046;
-      --texto-suave: #7a6b71;
-      --borda: #f5cfdc;
-      --sombra: 0 18px 45px rgba(201, 66, 111, 0.14);
-      --degrade: linear-gradient(135deg, #f27aa3 0%, #e94f86 55%, #c9426f 100%);
+      --borda: #f2c7d8;
+
+      /* TEXTO — matiz 333°, saturação constante; contraste conferido na AA */
+      --txt-forte: #392b31;   /* títulos   10,0:1 sobre sup-3 */
+      --texto: #55404a;       /* corpo      7,0:1 */
+      --texto-suave: #765966; /* apoio      4,6:1 */
+
+      /* ROSA — preenchimento e texto são cores diferentes, de propósito */
+      --rosa: #f27aa3;        /* gráfico, nunca texto */
+      --rosa-forte: #ec5f8c;  /* gráfico */
+      --rosa-vivo: #e94f86;   /* gráfico, cor da marca */
+      --rosa-escuro: #c9426f; /* gráfico */
+      --rosa-texto: #b12c59;  /* links e rótulos  4,6:1 sobre sup-3 */
+
+      /* ESCURO */
+      --plum: #3e2833;
+      --plum-2: #4a3039;
+      --plum-txt: #e3dde0;       /* 10,1:1 sobre plum */
+      --plum-suave: #c9bac2;     /*  7,3:1 */
+      --rosa-no-escuro: #eb8ead; /*  5,8:1 */
+
+      --sombra: 0 18px 45px rgba(62, 40, 51, 0.14);
+      /* rampa que aguenta texto branco em todo o percurso (5,3 a 6,7:1) */
+      --degrade: linear-gradient(135deg, #be3961 0%, #b33060 55%, #a72763 100%);
+
+      /* apelidos antigos, para as referências var() já existentes */
+      --rosa-claro: var(--sup-2);
+      --rosa-bebe: var(--sup-1);
+      --creme: var(--sup-1);
     }
 
     * {
@@ -54,7 +75,8 @@
     }
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                   "Helvetica Neue", Arial, sans-serif;
       color: var(--texto);
       background: var(--creme);
       line-height: 1.6;
@@ -119,7 +141,7 @@
       gap: 28px;
       font-size: 14px;
       font-weight: 700;
-      color: #6d4a59;
+      color: var(--texto);
     }
 
     nav a {
@@ -127,7 +149,7 @@
     }
 
     nav a:hover {
-      color: var(--rosa-vivo);
+      color: var(--rosa-texto);
     }
 
     nav .nav-cta,
@@ -163,7 +185,7 @@
       border: 0;
       border-radius: 50%;
       background: var(--branco);
-      color: var(--rosa-escuro);
+      color: var(--rosa-texto);
       display: grid;
       place-items: center;
       cursor: pointer;
@@ -190,7 +212,7 @@
     /* HERO — a cesta se monta conforme a rolagem */
     .hero {
       position: relative;
-      background: #fbd3e2;
+      background: var(--sup-3);
     }
 
     .hero-sticky {
@@ -203,7 +225,7 @@
       background:
         radial-gradient(circle at 88% 14%, rgba(236, 95, 140, .30), transparent 30%),
         radial-gradient(circle at 5% 75%, rgba(255,255,255,.75), transparent 28%),
-        linear-gradient(160deg, #fde4ee 0%, #fbd3e2 55%, #f8c0d6 100%);
+        linear-gradient(160deg, var(--sup-1) 0%, var(--sup-2) 55%, var(--sup-3) 100%);
     }
 
     .hero-sticky::before,
@@ -278,7 +300,7 @@
       display: inline-flex;
       align-items: center;
       gap: 9px;
-      color: var(--rosa-vivo);
+      color: var(--rosa-texto);
       font-weight: 700;
       font-size: 13px;
       letter-spacing: .11em;
@@ -296,20 +318,20 @@
       font-size: clamp(47px, 6vw, 76px);
       line-height: 1.02;
       font-weight: 500;
-      color: #4d3540;
+      color: var(--txt-forte);
       max-width: 690px;
       letter-spacing: -.035em;
     }
 
     h1 em {
       font-style: italic;
-      color: var(--rosa-vivo);
+      color: var(--rosa-texto);
     }
 
     .hero p {
       max-width: 590px;
       margin: 25px 0 32px;
-      color: #6f5963;
+      color: var(--texto);
       font-size: 18px;
     }
 
@@ -342,7 +364,7 @@
 
     .btn-light {
       background: var(--branco);
-      color: var(--rosa-escuro);
+      color: var(--rosa-texto);
       box-shadow: 0 12px 25px rgba(90, 20, 50, .18);
     }
 
@@ -410,7 +432,7 @@
       align-items: center;
       justify-content: center;
       gap: 10px;
-      color: var(--rosa-vivo);
+      color: var(--rosa-texto);
       font-size: 13px;
       font-weight: 800;
       letter-spacing: .12em;
@@ -444,7 +466,7 @@
       padding: 7px 16px;
       border-radius: 999px;
       background: rgba(255,255,255,.92);
-      color: var(--rosa-escuro);
+      color: var(--rosa-texto);
       font-size: 12.5px;
       font-weight: 800;
       letter-spacing: .05em;
@@ -480,7 +502,7 @@
     /* PRODUTOS */
     .products {
       padding: 105px 0;
-      background: linear-gradient(180deg, var(--creme) 0%, #fff5f8 100%);
+      background: linear-gradient(180deg, var(--sup-1) 0%, var(--sup-2) 100%);
     }
 
     .section-head {
@@ -490,7 +512,7 @@
     }
 
     .section-kicker {
-      color: var(--rosa-vivo);
+      color: var(--rosa-texto);
       font-size: 13px;
       font-weight: 800;
       letter-spacing: .12em;
@@ -501,7 +523,7 @@
     h2 {
       font-family: Georgia, 'Times New Roman', serif;
       font-weight: 500;
-      color: #4d3540;
+      color: var(--txt-forte);
       font-size: clamp(38px, 4.8vw, 58px);
       line-height: 1.08;
       letter-spacing: -.025em;
@@ -556,7 +578,7 @@
       border-radius: 50%;
       top: -55px;
       left: -35px;
-      background: linear-gradient(135deg, #fbd3e2, #fbe7ee);
+      background: linear-gradient(135deg, var(--sup-3), var(--sup-2));
       opacity: .85;
     }
 
@@ -564,7 +586,7 @@
       width: 48px;
       height: 48px;
       border-radius: 16px;
-      background: linear-gradient(135deg, #fde4ee, #fbd3e2);
+      background: linear-gradient(135deg, var(--sup-2), var(--sup-3));
       color: var(--rosa-vivo);
       display: grid;
       place-items: center;
@@ -617,7 +639,7 @@
       align-items: center;
       gap: 6px;
       margin-top: 14px;
-      color: var(--rosa-vivo);
+      color: var(--rosa-texto);
       font-size: 13px;
       font-weight: 800;
       letter-spacing: .03em;
@@ -666,7 +688,7 @@
       bottom: 12px;
       transform: translateX(-50%);
       display: flex;
-      gap: 4px;
+      gap: 14px;
       z-index: 3;
       padding: 5px 8px;
       border-radius: 999px;
@@ -675,14 +697,26 @@
     }
 
     .carousel-dots button {
-      width: 8px;
-      height: 8px;
+      position: relative;
+      width: 10px;
+      height: 10px;
       padding: 0;
       border: 0;
       border-radius: 50%;
-      background: rgba(201, 66, 111, .35);
+      background: rgba(62, 40, 51, .38);
       cursor: pointer;
       transition: width .25s ease, background .25s ease;
+    }
+
+    /* alvo de 24px sem mudar o desenho do ponto (WCAG 2.5.8) */
+    .carousel-dots button::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 24px;
+      height: 24px;
+      transform: translate(-50%, -50%);
     }
 
     .carousel-dots button.is-active {
@@ -699,7 +733,7 @@
       padding: 4px 10px;
       border-radius: 999px;
       background: rgba(255,255,255,.85);
-      color: var(--rosa-escuro);
+      color: var(--rosa-texto);
       font-size: 11px;
       font-weight: 800;
       letter-spacing: .05em;
@@ -721,8 +755,8 @@
       background:
         radial-gradient(circle at 92% 6%, rgba(236, 95, 140, .30), transparent 32%),
         radial-gradient(circle at 4% 96%, rgba(242, 122, 163, .16), transparent 30%),
-        linear-gradient(160deg, #4d3540 0%, #3d2a33 100%);
-      color: #ecd9e1;
+        linear-gradient(160deg, var(--plum-2) 0%, var(--plum) 100%);
+      color: var(--plum-txt);
     }
 
     .business-grid {
@@ -733,7 +767,7 @@
     }
 
     .business .section-kicker {
-      color: #f6b3cb;
+      color: var(--rosa-no-escuro);
     }
 
     .business h2 {
@@ -743,7 +777,7 @@
     .business-intro {
       margin-top: 20px;
       font-size: 17px;
-      color: #e2c9d3;
+      color: var(--plum-txt);
       max-width: 540px;
     }
 
@@ -781,7 +815,7 @@
 
     .business-uses span {
       font-size: 14px;
-      color: #cfb3bf;
+      color: var(--plum-suave);
     }
 
     .business-perks {
@@ -799,7 +833,7 @@
       background: rgba(255, 255, 255, .05);
       font-size: 13px;
       font-weight: 700;
-      color: #fbe7ee;
+      color: var(--plum-txt);
     }
 
     .business-perks li::before {
@@ -823,7 +857,7 @@
       font-weight: 500;
       font-size: 27px;
       line-height: 1.15;
-      color: #4d3540;
+      color: var(--txt-forte);
     }
 
     .date-card > p {
@@ -848,7 +882,7 @@
     .date-list time {
       font-family: Georgia, serif;
       font-size: 15px;
-      color: var(--rosa-vivo);
+      color: var(--rosa-texto);
       text-transform: lowercase;
     }
 
@@ -867,14 +901,14 @@
     }
 
     .date-list .date-highlight time {
-      color: #ffe3ed;
+      color: var(--branco);
     }
 
     .date-tag {
       padding: 4px 10px;
       border-radius: 999px;
       background: var(--branco);
-      color: var(--rosa-escuro);
+      color: var(--rosa-texto);
       font-size: 11px;
       font-weight: 800;
       font-style: normal;
@@ -886,8 +920,10 @@
     nav a:focus-visible,
     .nav-mobile a:focus-visible,
     .menu-toggle:focus-visible {
-      outline: 3px solid #f6b3cb;
-      outline-offset: 3px;
+      /* dois anéis de luminosidade oposta: visível no claro, no rosa e no plum */
+      outline: 3px solid var(--branco);
+      outline-offset: 2px;
+      box-shadow: 0 0 0 6px var(--plum);
     }
 
     /* QUEM SOMOS */
@@ -895,7 +931,7 @@
       padding: 105px 0;
       background:
         radial-gradient(circle at 92% 10%, rgba(236, 95, 140, .18), transparent 30%),
-        linear-gradient(180deg, #fff1f5 0%, #fde4ee 100%);
+        linear-gradient(180deg, var(--sup-1) 0%, var(--sup-2) 100%);
     }
 
     .about-grid {
@@ -915,7 +951,7 @@
       place-items: center;
       padding: 35px;
       text-align: center;
-      color: #987480;
+      color: var(--texto-suave);
     }
 
     .about-image img {
@@ -956,7 +992,7 @@
       display: block;
       font-family: Georgia, serif;
       font-size: 31px;
-      color: var(--rosa-vivo);
+      color: var(--rosa-texto);
       line-height: 1;
       margin-bottom: 8px;
     }
@@ -970,8 +1006,8 @@
     .contact {
       padding: 95px 0;
       background:
-        radial-gradient(circle at 12% 20%, rgba(255,255,255,.22), transparent 30%),
-        radial-gradient(circle at 90% 90%, rgba(255,255,255,.14), transparent 28%),
+        radial-gradient(circle at 12% 20%, rgba(255,255,255,.10), transparent 30%),
+        radial-gradient(circle at 90% 90%, rgba(255,255,255,.07), transparent 28%),
         var(--degrade);
       color: var(--branco);
       text-align: center;
@@ -980,7 +1016,7 @@
     }
 
     .contact .section-kicker {
-      color: #ffe3ed;
+      color: var(--branco);
     }
 
     .contact h2 {
@@ -992,7 +1028,7 @@
     .contact p {
       max-width: 620px;
       margin: 18px auto 34px;
-      color: #ffeef4;
+      color: var(--branco);
       font-size: 17px;
     }
 
@@ -1005,8 +1041,8 @@
 
     /* RODAPÉ */
     footer {
-      background: #3d2a33;
-      color: #e9d6de;
+      background: var(--plum);
+      color: var(--plum-txt);
       padding: 44px 0 26px;
       font-size: 14px;
     }
@@ -1053,7 +1089,7 @@
     }
 
     .footer-links a:hover {
-      color: var(--rosa);
+      color: var(--rosa-no-escuro);
     }
 
     .footer-links svg {
@@ -1069,12 +1105,12 @@
       justify-content: space-between;
       gap: 12px;
       flex-wrap: wrap;
-      color: #b89aa7;
+      color: var(--plum-suave);
       font-size: 12px;
     }
 
     .footer-bottom a {
-      color: #f6b3cb;
+      color: var(--rosa-no-escuro);
       font-weight: 700;
     }
 
@@ -1165,7 +1201,7 @@
       width: 48px;
       height: 48px;
       background: rgba(255,255,255,.92);
-      color: var(--rosa-escuro);
+      color: var(--rosa-texto);
       font-size: 24px;
       line-height: 1;
       cursor: pointer;
