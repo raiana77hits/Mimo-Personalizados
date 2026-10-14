@@ -45,6 +45,17 @@ Todos os assets ficam na **raiz do repositório** — sem subpastas.
 
 > ⚠️ **NUNCA usar prefixo `cesta/` nos `src` das imagens.** Tudo na raiz.
 
+### `video/` — peças de anúncio (fora do site)
+
+Projeto Remotion que gera os anúncios de 6s em 16:9 e 9:16. Tem `package.json`
+próprio, mas **não faz parte do site**: o `.vercelignore` da raiz exclui a pasta
+do deploy, para que ela não seja servida e para que o `package.json` dela jamais
+interfira na detecção de framework da Vercel. A raiz continua sem `package.json`,
+e é isso que mantém o repositório sendo tratado como site estático.
+
+O `publicDir` do Remotion aponta para a raiz, então o anúncio usa as **mesmas**
+fotos do site, sem cópia. Detalhes em `video/README.md`.
+
 ---
 
 ## Hero Section — um momento orquestrado de 6s
@@ -164,6 +175,8 @@ O peso inicial é sensível a duas coisas, e as duas já morderam:
 - [ ] Apagar as 8 imagens órfãs da cesta antiga (884 KB), se não forem voltar
 - [ ] Caixa alta dos botões está no texto do HTML, não no CSS — baixar para
       caixa normal quando houver aval para mexer em texto
+- [ ] Se algum dia a raiz ganhar um `package.json`, revisar o deploy: a Vercel
+      passaria a tentar build em vez de servir os arquivos estáticos
 
 ---
 

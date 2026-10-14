@@ -1,0 +1,6 @@
+# A pasta video/ é o projeto Remotion que gera as peças de anúncio.
+# Ela NÃO faz parte do site: fica fora do deploy para (a) não ser servida
+# publicamente, (b) não pesar o envio e (c) garantir que o package.json dela
+# nunca interfira na detecção de framework da Vercel, que deve continuar
+# tratando este repositório como site estático.
+video/
