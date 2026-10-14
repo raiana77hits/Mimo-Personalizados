@@ -26,10 +26,6 @@ Todos os assets ficam na **raiz do repositório** — sem subpastas.
 ├── logo-mimo.webp
 ├── favicon.ico / favicon-32.png / favicon-512.png / apple-touch-icon.png
 │
-├── [imagens da cesta — NÃO USADAS desde a troca do herói]
-│   └── (ÓRFÃS — eram da cesta antiga, já não referenciadas: caixa, palha,
-│       caneca, nutella, azulejo, shandon, ferrero, petalas — 884 KB)
-│
 ├── loja-mimo-criativo.webp   ← foto da loja, seção "Quem somos" (940x910)
 │
 └── [imagens dos produtos — carrossel/galeria]
@@ -174,7 +170,7 @@ O peso inicial é sensível a duas coisas, e as duas já morderam:
 - [x] ~~Otimizar LCP~~ — 2,86 MB → 1,24 MB no carregamento inicial
 - [ ] Testar em iOS Safari (o herói não usa mais sticky, mas confirmar o SMIL)
 - [x] ~~Espaço reservado de "Quem somos"~~ — foto real da loja no lugar
-- [ ] Apagar as 8 imagens órfãs da cesta antiga (884 KB), se não forem voltar
+- [x] ~~Imagens órfãs da cesta antiga~~ — as 8 apagadas (884 KB)
 - [ ] Caixa alta dos botões está no texto do HTML, não no CSS — baixar para
       caixa normal quando houver aval para mexer em texto
 - [ ] Se algum dia a raiz ganhar um `package.json`, revisar o deploy: a Vercel
