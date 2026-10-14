@@ -30,6 +30,8 @@ Todos os assets ficam na **raiz do repositório** — sem subpastas.
 │   └── (ÓRFÃS — eram da cesta antiga, já não referenciadas: caixa, palha,
 │       caneca, nutella, azulejo, shandon, ferrero, petalas — 884 KB)
 │
+├── loja-mimo-criativo.webp   ← foto da loja, seção "Quem somos" (940x910)
+│
 └── [imagens dos produtos — carrossel/galeria]
     ├── kit-presente-caneca-abraco.webp
     ├── caneca-*.webp
@@ -171,7 +173,7 @@ O peso inicial é sensível a duas coisas, e as duas já morderam:
 - [x] ~~Composição da cesta no desktop~~ — herói refeito
 - [x] ~~Otimizar LCP~~ — 2,86 MB → 1,24 MB no carregamento inicial
 - [ ] Testar em iOS Safari (o herói não usa mais sticky, mas confirmar o SMIL)
-- [ ] Trocar o espaço reservado de "Quem somos" pela foto real do cliente
+- [x] ~~Espaço reservado de "Quem somos"~~ — foto real da loja no lugar
 - [ ] Apagar as 8 imagens órfãs da cesta antiga (884 KB), se não forem voltar
 - [ ] Caixa alta dos botões está no texto do HTML, não no CSS — baixar para
       caixa normal quando houver aval para mexer em texto
